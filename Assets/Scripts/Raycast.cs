@@ -14,7 +14,6 @@ public class Raycast : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        //lineRenderer.positionCount = 2;
     }
 
     // Update is called once per frame
@@ -44,6 +43,19 @@ public class Raycast : MonoBehaviour
 
         lineRenderer.positionCount = points.Count;
         lineRenderer.SetPositions(points.ToArray());
+
+    }
+
+    void OnDrawGizmos()
+    {
+        if (!lineRenderer) return;
+        Vector3[] positions = new Vector3[lineRenderer.positionCount];
+        lineRenderer.GetPositions(positions);
+
+        for (int i = 1; i < lineRenderer.positionCount; i++)
+        {
+            Gizmos.DrawWireSphere(positions[i], 0.5f);
+        }
 
     }
 }
