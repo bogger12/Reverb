@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1744429087",
+    "Type": "User",
+    "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
+    "Language": "SFX",
+    "Hash": "{FBB37198-77F2-B6E3-4A3D-D79EAB6AB51C}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
+    "ShortName": "Bank",
+    "Path": "Bank.bnk",
+    "Media": [
+     {
+      "Id": "618176167",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "140_Bass_SP_60.wav",
+      "CachePath": "80/{80ACF44C-3870-C242-49E6-6D9249190062}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "3195547174",
+      "Name": "debstart",
+      "ObjectPath": "\\Events\\Default Work Unit\\debstart",
+      "GUID": "{E8914013-E5C6-4D30-B265-3E072B8D2E60}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.04989",
+      "DurationMax": "2.04989",
+      "MediaRefs": [
+       {
+        "Id": "618176167"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{83BFF401-AD13-5F26-4A49-A661856CCEE7}"
+ }
+}

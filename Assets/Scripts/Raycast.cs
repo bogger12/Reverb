@@ -19,6 +19,7 @@ public class Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Vector3 origin = transform.position + transform.up * 0.05f + transform.right * 0.15f;
         Vector3 direction = transform.forward;
 

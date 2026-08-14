@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}" SchemaVersion="133">
 	<Containers>
-		<WorkUnit Name="Default Work Unit" ID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="dubsterp" ID="{A9C6B132-670C-4F20-B2FE-FA4B87D395F8}" ShortID="845173113">
+					<PropertyList>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="140_Bass_SP_60" ID="{83AA10CA-4875-4591-8EC6-906B6F24184B}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.04989"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>140_Bass_SP_60.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="618176167"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="140_Bass_SP_60" ID="{83AA10CA-4875-4591-8EC6-906B6F24184B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</Containers>
 </WwiseDocument>

@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" SchemaVersion="133">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="debstart" ID="{E8914013-E5C6-4D30-B265-3E072B8D2E60}">
+					<ChildrenList>
+						<Action Name="" ID="{867D56EF-3BF7-4EAF-91E0-776572F26E28}" ShortID="937908515">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="dubsterp" ID="{A9C6B132-670C-4F20-B2FE-FA4B87D395F8}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3195547174	debstart			\Default Work Unit\debstart	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	618176167	dubsterp	.cache\80\{80ACF44C-3870-C242-49E6-6D9249190062}.wem		\Containers\Default Work Unit\dubsterp		361696
+
