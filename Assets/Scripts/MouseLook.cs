@@ -58,31 +58,13 @@ public class MouseLook : MonoBehaviour
         originalRotation = transform.localRotation;
         if (lockCursor)
         {
-            #if UNITY_STANDALONE
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            #endif
-            #if UNITY_EDITOR
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = false;
-            #endif
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
-    void LateUpdate()
+    void Update()
     {
-        if (lockCursor)
-        {
-            #if UNITY_STANDALONE
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            #endif
-            #if UNITY_EDITOR
-                Cursor.lockState = CursorLockMode.Confined;
-                Cursor.visible = false;
-            #endif
-        }
-
         if (working)
         {
             if (cutSceneMode)

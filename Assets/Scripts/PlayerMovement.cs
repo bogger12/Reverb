@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float inputY = 0;
 
     public InputActionAsset Input;
-    
+
     [Header("Movement Vars")]
     [Tooltip("Walk Speed, 3 is default")]
     public float walkSpeed = 3.0f;
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Multiplier for fall damage based on fall height, 1.85 is default")]
     public float fallMultiplier = 1.85f;
 
-    
+
     // Small amounts of this results in bumping when walking down slopes, but large amounts results in falling too fast
     private float antiBumpFactor = .75f;
     // Player must be grounded for at least this many physics frames before being able to jump again; set to 0 to allow bunny hopping
@@ -125,15 +125,15 @@ public class PlayerMovement : MonoBehaviour
         footstepSource.loop = true;
         gravity = defGravity;
         mainCam = GameObject.FindWithTag("MainCamera");
-        if(mainCam == null)
+        if (mainCam == null)
         {
-            mainCam = FindObjectOfType<Camera>().gameObject;
+            mainCam = FindFirstObjectByType<Camera>().gameObject;
         }
         if (ladderClimbSource != null)
         {
             ladderClimbSource.loop = true;
         }
-        if(slideSource != null)
+        if (slideSource != null)
         {
             slideSource.loop = true;
         }
@@ -234,7 +234,7 @@ public class PlayerMovement : MonoBehaviour
                     running = true;
                 else
                     running = false;
-                
+
                 // If sliding (and it's allowed), or if we're on an object tagged "Slide", get a vector pointing down the slope we're on
                 if ((sliding && slideWhenOverSlopeLimit) || (slideOnTaggedObjects && hit.collider.tag == "Slide"))
                 {
@@ -243,7 +243,7 @@ public class PlayerMovement : MonoBehaviour
                     Vector3.OrthoNormalize(ref hitNormal, ref moveDirection);
                     moveDirection *= slideSpeed;
                     playerControl = false;
-                    if((slideOnTaggedObjects && hit.collider.tag == "Slide"))
+                    if ((slideOnTaggedObjects && hit.collider.tag == "Slide"))
                     {
                         if (!slideSource.isPlaying)
                         {
@@ -273,7 +273,7 @@ public class PlayerMovement : MonoBehaviour
                 //check if on trampoline surface
                 if (hit.collider.tag == "Trampoline")
                 {
-                    if(controller.velocity.y < -5)
+                    if (controller.velocity.y < -5)
                     {
                         float upwardsVel = controller.velocity.y * -1;
                         moveDirection.y = upwardsVel;
@@ -465,7 +465,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             RaycastHit hit;
-            if (Physics.Raycast(new Vector3(transform.position.x,transform.position.y-controller.height/2 +.1f, transform.position.z), transform.TransformDirection(Vector3.forward), out hit, .65f))
+            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - controller.height / 2 + .1f, transform.position.z), transform.TransformDirection(Vector3.forward), out hit, .65f))
             {
                 if (hit.collider.tag == "Ladder")
                 {
@@ -478,7 +478,7 @@ public class PlayerMovement : MonoBehaviour
                         //use camera pitch as input
                         climbSpeed = Mathf.Sin(mainCam.transform.localRotation.x) * -3;
                         //-1.8 to 1.8
-                        if(climbSpeed > .5f || climbSpeed < -.5f)
+                        if (climbSpeed > .5f || climbSpeed < -.5f)
                         {
                             if (!ladderClimbSource.isPlaying)
                             {

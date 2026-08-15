@@ -10,8 +10,15 @@ public class Holder : MonoBehaviour
     public Transform dragToPoint;
     public InputActionAsset Input;
 
+    [Header("Pull")]
     public float maxDistance = 10f;
     public float pullStrength = 1f;
+
+    [Header("Restitution Dampening")]
+    public float restitutionRadius = 0.8f;
+    public float restitutionStrength = 0.8f;
+    public float dampeningCoefficient = 0.95f;
+
 
     private Rigidbody heldObject;
 
@@ -21,7 +28,7 @@ public class Holder : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -39,7 +46,11 @@ public class Holder : MonoBehaviour
                 {
                     AkUnitySoundEngine.PostEvent("Hold_Obj", gameObject);
                     GameObject objectHit = hit.collider.gameObject;
-                    heldObject = objectHit.GetComponent<Rigidbody>();
+                    if (objectHit.TryGetComponent(out Rigidbody rb))
+                    {
+                        heldObject = rb;
+                        heldObject.useGravity = false;
+                    }
                 }
 
             }
@@ -47,6 +58,7 @@ public class Holder : MonoBehaviour
             {
                 //AkUnitySoundEngine.StopAll(gameObject);
                 AkUnitySoundEngine.ExecuteActionOnEvent("Hold_Obj", AkActionOnEventType.AkActionOnEventType_Stop, gameObject, 600, AkCurveInterpolation.AkCurveInterpolation_Linear);
+                if (heldObject) heldObject.useGravity = true;
                 heldObject = null;
             }
 
@@ -58,15 +70,17 @@ public class Holder : MonoBehaviour
         if (heldObject)
         {
 
-            Vector3 direction = dragToPoint.position - heldObject.transform.position;
+            Vector3 direction = dragToPoint.position - heldObject.position;
             float distance = direction.magnitude;
-            AkUnitySoundEngine.SetRTPCValue("Object_Held_Velocity", distance); 
-            heldObject.AddForce(direction.normalized * pullStrength, ForceMode.Acceleration);
+            AkUnitySoundEngine.SetRTPCValue("Object_Held_Velocity", distance);
 
-            float fuck = 0.5f;
+            Vector3 pullForce = distance * pullStrength * direction.normalized;
+            heldObject.AddForce(pullForce, ForceMode.Acceleration);
 
-            float fucklerp = Mathf.InverseLerp(0, fuck, distance);
-            heldObject.linearVelocity *= fucklerp * 0.9f;
+            // Restitution (dampen closer to target)
+            float restitution = Mathf.InverseLerp(0, restitutionRadius, distance) * restitutionStrength + (1 - restitutionStrength);
+            Debug.Log(restitution);
+            heldObject.linearVelocity *= restitution * dampeningCoefficient;
 
         }
     }
