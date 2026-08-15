@@ -116,12 +116,165 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
+									<RTPC Name="" ID="{1E89345A-716C-4346-AD62-9291C0EF6F65}" ShortID="754442279">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Object_Held_Velocity" ID="{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}" WorkUnitID="{055C3A32-1C4C-4507-87B1-7A21504B0294}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{04CA2726-3581-4759-BCC1-364737D4C746}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>77</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>5</XPos>
+																<YPos>58</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
 								</ObjectList>
 							</ObjectLists>
 							<ActiveSourceList>
 								<ActiveSource Name="Glimmer_Drone" ID="{52B0082F-D985-4979-AABF-9922143C211B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{4AC1F435-15C4-4FA4-AF6B-B2E4F8FC5DFE}" ShortID="168547391">
+					<ChildrenList>
+						<MusicPlaylistContainer Name="Music" ID="{8BBFB182-C98A-4285-AC2C-C580ECEF478F}" ShortID="765765843">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+								<Reference Name="PlaylistRoot">
+									<Custom>
+										<MusicPlaylistItem Name="" ID="{A08E9788-9135-4864-8496-FB0A5E5F8BC6}" ShortID="170475945">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{B3127760-2FB5-4A81-8272-6DC58DE7B536}" ShortID="577818838">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Music" ID="{B535E1F1-AF34-4E6C-953D-F125B829353C}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Custom>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{38881737-22C0-42C0-972E-942F93F2F9C1}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{4636951E-FEB9-4CE8-8D22-6BA6B4C6B11A}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="Music" ID="{B535E1F1-AF34-4E6C-953D-F125B829353C}" ShortID="1011675855">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="260909.533756318"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="Sountrack" ID="{700D77E7-D148-485D-BB8B-BBD3609632F2}" ShortID="448572006">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{A534928C-9000-43A0-BAE4-19031E2AE7EC}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="gdg jam 26 sountrack (so far)" ID="{32300CE4-F82D-46F2-88D0-488CEFB690E1}">
+													<Language>SFX</Language>
+													<AudioFile>gdg jam 26 sountrack (so far).wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="798827070"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<MusicTrackSequence Name="" ID="{B4ED21E2-35FB-4BCE-9550-C62B3682C707}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<MusicClip Name="gdg jam 26 sountrack (so far)" ID="{E064D409-3B17-430F-A9D8-35F8C28A8D30}">
+																	<PropertyList>
+																		<Property Name="EndTrimOffset" Type="Real64" Value="182150.929705215"/>
+																		<Property Name="FadeInMode" Type="int16" Value="0"/>
+																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<AudioSourceRef Name="gdg jam 26 sountrack (so far)" ID="{32300CE4-F82D-46F2-88D0-488CEFB690E1}"/>
+																</MusicClip>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<MusicCue Name="Entry Cue" ID="{53F4DD00-532B-4F56-9274-3014798CC1BB}"/>
+											<MusicCue Name="Exit Cue" ID="{4565DA97-CFB0-4D64-924C-97E12C060E41}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="182150.929705215"/>
+												</PropertyList>
+											</MusicCue>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+						</MusicPlaylistContainer>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

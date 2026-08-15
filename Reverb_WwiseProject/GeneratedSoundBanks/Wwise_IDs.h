@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID DEBSTART = 3195547174U;
         static const AkUniqueID HOLD_OBJ = 2959096816U;
+        static const AkUniqueID MAIN_MUSIC = 63796330U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

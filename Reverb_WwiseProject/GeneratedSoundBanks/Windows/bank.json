@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
     "Language": "SFX",
-    "Hash": "{4EB31870-9AFB-7B44-7AAE-45C04E18588D}",
+    "Hash": "{DD27100E-D645-0856-9363-31C7E9979B51}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
     "ShortName": "Bank",
     "Path": "Bank.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "Glimmer_Drone.wav",
       "CachePath": "D0/{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem"
+     },
+     {
+      "Id": "798827070",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "gdg jam 26 sountrack (so far).wav",
+      "CachePath": "70/{700D4D96-94EB-E9B1-F466-9B8EF314288B}.wem"
      }
     ],
     "Events": [
@@ -58,6 +66,18 @@
         "Id": "798274983"
        }
       ]
+     },
+     {
+      "Id": "63796330",
+      "Name": "Main_Music",
+      "ObjectPath": "\\Events\\Music Heirarchy\\Main_Music",
+      "GUID": "{FB03BE88-5A82-44E2-9397-701644C6701F}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "798827070"
+       }
+      ]
      }
     ],
     "GameParameters": [
@@ -70,6 +90,6 @@
     ]
    }
   ],
-  "FileHash": "{C9C42FB4-0BE9-1772-E1C3-033EBE64C63D}"
+  "FileHash": "{31B39C32-B30B-26CF-5166-C43AD36877AF}"
  }
 }

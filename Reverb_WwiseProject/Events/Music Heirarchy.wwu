@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0B24D06C-2BF5-445D-B463-BBAD5DB633C6}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Music Heirarchy" ID="{0B24D06C-2BF5-445D-B463-BBAD5DB633C6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Main_Music" ID="{FB03BE88-5A82-44E2-9397-701644C6701F}">
+					<ChildrenList>
+						<Action Name="" ID="{A5577CFF-0AE9-4F3A-9A5C-B2B45B9195FA}" ShortID="227264502">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music" ID="{8BBFB182-C98A-4285-AC2C-C580ECEF478F}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
