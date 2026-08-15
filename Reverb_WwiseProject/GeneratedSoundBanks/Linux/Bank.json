@@ -1,0 +1,119 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1744429087",
+    "Type": "User",
+    "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
+    "Language": "SFX",
+    "Hash": "{4A2ACD7B-4051-BA2B-2184-7621EDFB91D3}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
+    "ShortName": "Bank",
+    "Path": "Bank.bnk",
+    "Media": [
+     {
+      "Id": "180074334",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boinf.wav",
+      "CachePath": "A7/{A7AE18C7-6556-672D-1605-43FD71E712F2}.wem"
+     },
+     {
+      "Id": "618176167",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "140_Bass_SP_60.wav",
+      "CachePath": "80/{80ACF44C-3870-C242-49E6-6D9249190062}.wem"
+     },
+     {
+      "Id": "798274983",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Glimmer_Drone.wav",
+      "CachePath": "D0/{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem"
+     },
+     {
+      "Id": "827835314",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "hit_wood.wav",
+      "CachePath": "7F/{7F1A9DB8-53BD-CA93-6213-2BAB823D332B}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2848503745",
+      "Name": "Bounce_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Bounce_Metal",
+      "GUID": "{A39B8A80-BC7D-4F32-934E-018B456F495A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.21133786",
+      "DurationMax": "0.21133786",
+      "MediaRefs": [
+       {
+        "Id": "180074334"
+       }
+      ]
+     },
+     {
+      "Id": "1430640511",
+      "Name": "Bounce_Wood",
+      "ObjectPath": "\\Events\\Default Work Unit\\Bounce_Wood",
+      "GUID": "{70E0B2D9-3ABC-464D-AA82-D5C816B8CE1E}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.26702946",
+      "DurationMax": "0.26702946",
+      "MediaRefs": [
+       {
+        "Id": "827835314"
+       }
+      ]
+     },
+     {
+      "Id": "3195547174",
+      "Name": "debstart",
+      "ObjectPath": "\\Events\\Default Work Unit\\debstart",
+      "GUID": "{E8914013-E5C6-4D30-B265-3E072B8D2E60}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.04989",
+      "DurationMax": "2.04989",
+      "MediaRefs": [
+       {
+        "Id": "618176167"
+       }
+      ]
+     },
+     {
+      "Id": "2959096816",
+      "Name": "Hold_Obj",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Action\\Hold_Obj",
+      "GUID": "{54CC0E99-B4AC-4445-B9FE-A8E4D6FC5ECF}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "798274983"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "3329896872",
+      "Name": "Object_Held_Velocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Action\\Object_Held_Velocity",
+      "GUID": "{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6EC28577-4E0A-57F6-3015-D65D366D9705}"
+ }
+}

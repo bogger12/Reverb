@@ -8,11 +8,25 @@
   "CacheRoot": "../.cache",
   "Platforms": [
    {
+    "Name": "Linux",
+    "GUID": "{EA6FA29D-7C70-4A0E-A8BE-223FAA466390}",
+    "BasePlatform": "Linux",
+    "BasePlatformGUID": "{BD0BDF13-3125-454F-8BFD-319537169F81}",
+    "Path": "Linux"
+   },
+   {
     "Name": "Mac",
     "GUID": "{B63D4039-495B-49D8-A70A-621D59A5D6FE}",
     "BasePlatform": "Mac",
     "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
     "Path": "Mac"
+   },
+   {
+    "Name": "Web",
+    "GUID": "{9CB4187F-46D3-4F1D-BFB8-339B2FDA1529}",
+    "BasePlatform": "Web",
+    "BasePlatformGUID": "{639AD233-23F2-4C0F-9127-79F44C15E1DA}",
+    "Path": "Web"
    },
    {
     "Name": "Windows",
@@ -31,6 +45,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{5D6EC2FF-10A5-3DE1-09B4-E20475B539FB}"
+  "FileHash": "{19D54D2F-3A9F-8E01-89F5-C54D4A932C78}"
  }
 }
