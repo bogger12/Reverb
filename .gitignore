@@ -113,3 +113,11 @@ __MACOSX/
 .LSOverride
 Icon[]
 
+# Wwise
+.backup*
+.cache*
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+IncrementalSoundBankData.xml

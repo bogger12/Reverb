@@ -9,30 +9,40 @@
 							<ValueList>
 								<Value Platform="Windows">4</Value>
 								<Value Platform="Mac">4</Value>
+								<Value Platform="Linux">4</Value>
+								<Value Platform="Web">4</Value>
 							</ValueList>
 						</Property>
 						<Property Name="LRMix" Type="Real64">
 							<ValueList>
 								<Value Platform="Windows">0</Value>
 								<Value Platform="Mac">0</Value>
+								<Value Platform="Linux">0</Value>
+								<Value Platform="Web">0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="MaxSampleRate" Type="int32">
 							<ValueList>
 								<Value Platform="Windows">48000</Value>
 								<Value Platform="Mac">48000</Value>
+								<Value Platform="Linux">48000</Value>
+								<Value Platform="Web">48000</Value>
 							</ValueList>
 						</Property>
 						<Property Name="MinSampleRate" Type="int32">
 							<ValueList>
 								<Value Platform="Windows">0</Value>
 								<Value Platform="Mac">0</Value>
+								<Value Platform="Linux">0</Value>
+								<Value Platform="Web">0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="SampleRate" Type="int32">
 							<ValueList>
 								<Value Platform="Windows">0</Value>
 								<Value Platform="Mac">0</Value>
+								<Value Platform="Linux">0</Value>
+								<Value Platform="Web">0</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -42,6 +52,12 @@
 						</ConversionPluginInfo>
 						<ConversionPluginInfo Platform="Mac">
 							<ConversionPlugin Name="" ID="{8C49D6B6-E994-4B24-9944-817D3CDAFE58}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+						</ConversionPluginInfo>
+						<ConversionPluginInfo Platform="Linux">
+							<ConversionPlugin Name="" ID="{89A67A3C-53A5-4FD1-AC9E-71D31342AB5E}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+						</ConversionPluginInfo>
+						<ConversionPluginInfo Platform="Web">
+							<ConversionPlugin Name="" ID="{E5502B11-FAA2-4F60-AA78-BD1E2A253638}" PluginName="PCM" CompanyID="0" PluginID="1"/>
 						</ConversionPluginInfo>
 					</ConversionPluginInfoList>
 				</Conversion>
