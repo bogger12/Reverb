@@ -43,6 +43,87 @@
 						<ActiveSource Name="140_Bass_SP_60" ID="{83AA10CA-4875-4591-8EC6-906B6F24184B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Folder Name="Player_Action" ID="{896C115D-6FB6-42E2-9860-CC9F5898A83C}" ShortID="167703771">
+					<ChildrenList>
+						<Sound Name="Object_Held_Antigrav" ID="{102F8A37-1470-476C-9F80-D8560C743D83}" ShortID="275833618">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Glimmer_Drone" ID="{52B0082F-D985-4979-AABF-9922143C211B}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.54547"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="6.82014"/>
+										<Property Name="TrimEnd" Type="Real64" Value="30.97641"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Glimmer_Drone.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="798274983"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{7F95E76E-1E4E-4418-931F-A5C150A4A874}" ShortID="769299216">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Pitch"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Object_Held_Velocity" ID="{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}" WorkUnitID="{055C3A32-1C4C-4507-87B1-7A21504B0294}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{CA4773FD-84DE-49E5-8748-D9028CC6E196}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>5</XPos>
+																<YPos>1000</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Glimmer_Drone" ID="{52B0082F-D985-4979-AABF-9922143C211B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

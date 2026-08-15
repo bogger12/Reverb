@@ -21,7 +21,7 @@ public class Holder : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class Holder : MonoBehaviour
 
                 if (heldObject == null)
                 {
+                    AkUnitySoundEngine.PostEvent("Hold_Obj", gameObject);
                     GameObject objectHit = hit.collider.gameObject;
                     heldObject = objectHit.GetComponent<Rigidbody>();
                 }
@@ -44,6 +45,8 @@ public class Holder : MonoBehaviour
             }
             else
             {
+                //AkUnitySoundEngine.StopAll(gameObject);
+                AkUnitySoundEngine.ExecuteActionOnEvent("Hold_Obj", AkActionOnEventType.AkActionOnEventType_Stop, gameObject, 600, AkCurveInterpolation.AkCurveInterpolation_Linear);
                 heldObject = null;
             }
 
@@ -54,8 +57,10 @@ public class Holder : MonoBehaviour
     {
         if (heldObject)
         {
+
             Vector3 direction = dragToPoint.position - heldObject.transform.position;
             float distance = direction.magnitude;
+            AkUnitySoundEngine.SetRTPCValue("Object_Held_Velocity", distance); 
             heldObject.AddForce(direction.normalized * pullStrength, ForceMode.Acceleration);
 
             float fuck = 0.5f;

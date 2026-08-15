@@ -14,6 +14,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Player_Action" ID="{4359F3CF-9C47-40A5-8331-9167BB87F155}" ShortID="334920604">
+					<ChildrenList>
+						<Event Name="Hold_Obj" ID="{54CC0E99-B4AC-4445-B9FE-A8E4D6FC5ECF}">
+							<ChildrenList>
+								<Action Name="" ID="{0EA3AE8F-435A-45B1-932C-FBB8A4BEC232}" ShortID="95491299">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Object_Held_Antigrav" ID="{102F8A37-1470-476C-9F80-D8560C743D83}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

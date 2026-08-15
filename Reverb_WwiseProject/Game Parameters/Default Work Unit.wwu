@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{055C3A32-1C4C-4507-87B1-7A21504B0294}" SchemaVersion="133">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{055C3A32-1C4C-4507-87B1-7A21504B0294}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{055C3A32-1C4C-4507-87B1-7A21504B0294}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Player_Action" ID="{1DEB7099-6BC1-484D-991F-6FC4317B4EB4}" ShortID="697773121">
+					<ChildrenList>
+						<GameParameter Name="Object_Held_Velocity" ID="{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="Max" Type="Real64" Value="5"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

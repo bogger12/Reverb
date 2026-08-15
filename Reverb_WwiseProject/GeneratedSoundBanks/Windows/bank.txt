@@ -1,6 +1,11 @@
 Event	ID	Name			Wwise Object Path	Notes
+	2959096816	Hold_Obj			\Default Work Unit\Player_Action\Hold_Obj	
 	3195547174	debstart			\Default Work Unit\debstart	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3329896872	Object_Held_Velocity			\Default Work Unit\Player_Action\Object_Held_Velocity	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	618176167	dubsterp	.cache\80\{80ACF44C-3870-C242-49E6-6D9249190062}.wem		\Containers\Default Work Unit\dubsterp		361696
+	798274983	Object_Held_Antigrav	.cache\D0\{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem		\Containers\Default Work Unit\Player_Action\Object_Held_Antigrav		4261264
 

@@ -14,7 +14,13 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID DEBSTART = 3195547174U;
+        static const AkUniqueID HOLD_OBJ = 2959096816U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID OBJECT_HELD_VELOCITY = 3329896872U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {

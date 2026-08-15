@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
     "Language": "SFX",
-    "Hash": "{FBB37198-77F2-B6E3-4A3D-D79EAB6AB51C}",
+    "Hash": "{4EB31870-9AFB-7B44-7AAE-45C04E18588D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
     "ShortName": "Bank",
     "Path": "Bank.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "140_Bass_SP_60.wav",
       "CachePath": "80/{80ACF44C-3870-C242-49E6-6D9249190062}.wem"
+     },
+     {
+      "Id": "798274983",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Glimmer_Drone.wav",
+      "CachePath": "D0/{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem"
      }
     ],
     "Events": [
@@ -38,10 +46,30 @@
         "Id": "618176167"
        }
       ]
+     },
+     {
+      "Id": "2959096816",
+      "Name": "Hold_Obj",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Action\\Hold_Obj",
+      "GUID": "{54CC0E99-B4AC-4445-B9FE-A8E4D6FC5ECF}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "798274983"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "3329896872",
+      "Name": "Object_Held_Velocity",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Player_Action\\Object_Held_Velocity",
+      "GUID": "{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}"
      }
     ]
    }
   ],
-  "FileHash": "{23C28D7C-C4E3-1118-A457-93C2DA6932A5}"
+  "FileHash": "{B7CEE696-F2E2-83EF-256E-BDB4B0775F2B}"
  }
 }

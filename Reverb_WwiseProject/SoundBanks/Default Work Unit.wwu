@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Bank" ID="{8EAD7BDD-79D5-48BC-BF89-B889E413A339}">
 					<ObjectInclusionList>
-						<ObjectRef Name="debstart" ID="{E8914013-E5C6-4D30-B265-3E072B8D2E60}" WorkUnitID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" WorkUnitID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
