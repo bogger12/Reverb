@@ -10,18 +10,26 @@
     "Type": "User",
     "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
     "Language": "SFX",
-    "Hash": "{4A2ACD7B-4051-BA2B-2184-7621EDFB91D3}",
+    "Hash": "{223EC0D5-0001-4861-C699-C7D0AF49C13D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
     "ShortName": "Bank",
     "Path": "Bank.bnk",
     "Media": [
      {
-      "Id": "180074334",
+      "Id": "532155472",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "boinf.wav",
       "CachePath": "A7/{A7AE18C7-6556-672D-1605-43FD71E712F2}.wem"
+     },
+     {
+      "Id": "583284895",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "hit_wood.wav",
+      "CachePath": "7F/{7F1A9DB8-53BD-CA93-6213-2BAB823D332B}.wem"
      },
      {
       "Id": "618176167",
@@ -40,12 +48,12 @@
       "CachePath": "D0/{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem"
      },
      {
-      "Id": "827835314",
+      "Id": "798827070",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "hit_wood.wav",
-      "CachePath": "7F/{7F1A9DB8-53BD-CA93-6213-2BAB823D332B}.wem"
+      "ShortName": "gdg jam 26 sountrack (so far).wav",
+      "CachePath": "70/{700D4D96-94EB-E9B1-F466-9B8EF314288B}.wem"
      }
     ],
     "Events": [
@@ -59,7 +67,7 @@
       "DurationMax": "0.21133786",
       "MediaRefs": [
        {
-        "Id": "180074334"
+        "Id": "532155472"
        }
       ]
      },
@@ -73,7 +81,7 @@
       "DurationMax": "0.26702946",
       "MediaRefs": [
        {
-        "Id": "827835314"
+        "Id": "583284895"
        }
       ]
      },
@@ -102,6 +110,18 @@
         "Id": "798274983"
        }
       ]
+     },
+     {
+      "Id": "63796330",
+      "Name": "Main_Music",
+      "ObjectPath": "\\Events\\Music Heirarchy\\Main_Music",
+      "GUID": "{FB03BE88-5A82-44E2-9397-701644C6701F}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "798827070"
+       }
+      ]
      }
     ],
     "GameParameters": [
@@ -114,6 +134,6 @@
     ]
    }
   ],
-  "FileHash": "{6EC28577-4E0A-57F6-3015-D65D366D9705}"
+  "FileHash": "{D5C1A58C-DB97-02F0-5DE0-C911BB55B70C}"
  }
 }

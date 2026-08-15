@@ -1,5 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	63796330	Main_Music			\Music Heirarchy\Main_Music	
+	1430640511	Bounce_Wood			\Default Work Unit\Bounce_Wood	
+	2848503745	Bounce_Metal			\Default Work Unit\Bounce_Metal	
 	2959096816	Hold_Obj			\Default Work Unit\Player_Action\Hold_Obj	
 	3195547174	debstart			\Default Work Unit\debstart	
 
@@ -7,6 +9,8 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3329896872	Object_Held_Velocity			\Default Work Unit\Player_Action\Object_Held_Velocity	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	532155472	BounceMetal	.cache\A7\{A7AE18C7-6556-672D-1605-43FD71E712F2}.wem		\Containers\Default Work Unit\BounceMetal		37376
+	583284895	BounceWood	.cache\7F\{7F1A9DB8-53BD-CA93-6213-2BAB823D332B}.wem		\Containers\Default Work Unit\BounceWood		47200
 	618176167	dubsterp	.cache\80\{80ACF44C-3870-C242-49E6-6D9249190062}.wem		\Containers\Default Work Unit\dubsterp		361696
 	798274983	Object_Held_Antigrav	.cache\D0\{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem		\Containers\Default Work Unit\Player_Action\Object_Held_Antigrav		4261264
 	798827070	Sountrack	.cache\70\{700D4D96-94EB-E9B1-F466-9B8EF314288B}.wem		\Containers\Default Work Unit\Music\Music\Music\Sountrack		32131520

@@ -10,11 +10,27 @@
     "Type": "User",
     "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
     "Language": "SFX",
-    "Hash": "{DD27100E-D645-0856-9363-31C7E9979B51}",
+    "Hash": "{223EC0D5-0001-4861-C699-C7D0AF49C13D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
     "ShortName": "Bank",
     "Path": "Bank.bnk",
     "Media": [
+     {
+      "Id": "532155472",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "boinf.wav",
+      "CachePath": "A7/{A7AE18C7-6556-672D-1605-43FD71E712F2}.wem"
+     },
+     {
+      "Id": "583284895",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "hit_wood.wav",
+      "CachePath": "7F/{7F1A9DB8-53BD-CA93-6213-2BAB823D332B}.wem"
+     },
      {
       "Id": "618176167",
       "Language": "SFX",
@@ -41,6 +57,34 @@
      }
     ],
     "Events": [
+     {
+      "Id": "2848503745",
+      "Name": "Bounce_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Bounce_Metal",
+      "GUID": "{A39B8A80-BC7D-4F32-934E-018B456F495A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.21133786",
+      "DurationMax": "0.21133786",
+      "MediaRefs": [
+       {
+        "Id": "532155472"
+       }
+      ]
+     },
+     {
+      "Id": "1430640511",
+      "Name": "Bounce_Wood",
+      "ObjectPath": "\\Events\\Default Work Unit\\Bounce_Wood",
+      "GUID": "{70E0B2D9-3ABC-464D-AA82-D5C816B8CE1E}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.26702946",
+      "DurationMax": "0.26702946",
+      "MediaRefs": [
+       {
+        "Id": "583284895"
+       }
+      ]
+     },
      {
       "Id": "3195547174",
       "Name": "debstart",
@@ -90,6 +134,6 @@
     ]
    }
   ],
-  "FileHash": "{72FA9341-0F3D-477D-6DD0-9861B8107894}"
+  "FileHash": "{A509EF84-4E17-2D71-1199-7ADD3D67A16C}"
  }
 }

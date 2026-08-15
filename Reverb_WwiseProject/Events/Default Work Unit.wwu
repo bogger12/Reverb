@@ -34,7 +34,7 @@
 						<Action Name="" ID="{855B39C4-42F8-4709-AFF5-0D4E06BD2AFB}" ShortID="840868498">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BounceMetal" ID="{6B37D508-2BA3-46FE-8625-55989870BAF6}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+									<ObjectRef Name="BounceMetal" ID="{03084256-DDE0-4868-A4A4-FDA0D673348E}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -45,7 +45,7 @@
 						<Action Name="" ID="{5CB70DC8-61D4-4830-B1B7-520695E5E130}" ShortID="768881926">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BounceWood" ID="{FF277D1D-95CE-4346-B9A2-BC7E820675AB}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+									<ObjectRef Name="BounceWood" ID="{D0A85A7E-4E1D-4EC2-B75A-1BFD6CBE57E5}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
