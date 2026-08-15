@@ -124,6 +124,54 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Bounce" ID="{094A918A-4916-4394-88A1-C0E8C0CBE976}" ShortID="826521551">
+					<ChildrenList>
+						<Sound Name="BounceMetal" ID="{6B37D508-2BA3-46FE-8625-55989870BAF6}" ShortID="502288453">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="boinf" ID="{5B6D40A3-19CD-4F35-A040-790AB52E7D62}">
+									<Language>SFX</Language>
+									<AudioFile>boinf.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="180074334"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="boinf" ID="{5B6D40A3-19CD-4F35-A040-790AB52E7D62}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BounceWood" ID="{FF277D1D-95CE-4346-B9A2-BC7E820675AB}" ShortID="494337032">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hit_wood" ID="{EAE48AEF-8122-4291-9E13-527CA3C2581C}">
+									<Language>SFX</Language>
+									<AudioFile>hit_wood.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="827835314"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hit_wood" ID="{EAE48AEF-8122-4291-9E13-527CA3C2581C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>
