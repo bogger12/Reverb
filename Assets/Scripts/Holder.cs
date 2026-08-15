@@ -79,7 +79,6 @@ public class Holder : MonoBehaviour
 
             // Restitution (dampen closer to target)
             float restitution = Mathf.InverseLerp(0, restitutionRadius, distance) * restitutionStrength + (1 - restitutionStrength);
-            Debug.Log(restitution);
             heldObject.linearVelocity *= restitution * dampeningCoefficient;
 
         }
