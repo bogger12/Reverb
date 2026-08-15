@@ -302,7 +302,7 @@ public class PlayerMovement : MonoBehaviour
                 }
 
                 // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
-                if (!Input["Crouch"].IsPressed())
+                if (!Input["Jump"].IsPressed())
                     jumpTimer++;
                 else if (jumpTimer >= antiBunnyHopFactor)
                 {

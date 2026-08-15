@@ -21,9 +21,9 @@ public class Holder : MonoBehaviour
 
 
     private Rigidbody heldObject;
-
-
     private Vector3 hitPoint;
+
+    private bool heldObjectGravity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,6 +49,7 @@ public class Holder : MonoBehaviour
                     if (objectHit.TryGetComponent(out Rigidbody rb))
                     {
                         heldObject = rb;
+                        heldObjectGravity = heldObject.useGravity;
                         heldObject.useGravity = false;
                     }
                 }
@@ -58,7 +59,7 @@ public class Holder : MonoBehaviour
             {
                 //AkUnitySoundEngine.StopAll(gameObject);
                 AkUnitySoundEngine.ExecuteActionOnEvent("Hold_Obj", AkActionOnEventType.AkActionOnEventType_Stop, gameObject, 600, AkCurveInterpolation.AkCurveInterpolation_Linear);
-                if (heldObject) heldObject.useGravity = true;
+                if (heldObject) heldObject.useGravity = heldObjectGravity;
                 heldObject = null;
             }
 
