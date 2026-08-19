@@ -25,6 +25,7 @@ public class SoundGun : MonoBehaviour
 
     void OnShoot()
     {
+        AkUnitySoundEngine.PostEvent("Fire", gameObject);
         SoundProjectile newProjectile = GameObject.Instantiate(soundProjectile, shootFrom.position, Quaternion.identity);
         newProjectile.speed = projectileSpeed;
         newProjectile.direction = transform.forward;

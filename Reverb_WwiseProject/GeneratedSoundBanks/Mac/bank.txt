@@ -1,13 +1,35 @@
 Event	ID	Name			Wwise Object Path	Notes
 	63796330	Main_Music			\Music Heirarchy\Main_Music	
+	1430640511	Bounce_Wood			\Default Work Unit\Environment\Bounce_Wood	
+	1969600401	Grab_Obj			\Default Work Unit\Player_Action\Grab_Obj	
+	2678880713	Fire			\Default Work Unit\Player_Action\Fire	
+	2848503745	Bounce_Metal			\Default Work Unit\Environment\Bounce_Metal	
 	2959096816	Hold_Obj			\Default Work Unit\Player_Action\Hold_Obj	
-	3195547174	debstart			\Default Work Unit\debstart	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	3329896872	Object_Held_Velocity			\Default Work Unit\Player_Action\Object_Held_Velocity	
 
+Effect plug-ins	ID	Name	Type				Notes
+	1852201	Tremolo (Custom)	Wwise Tremolo			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	618176167	dubsterp	.cache\80\{80ACF44C-3870-C242-49E6-6D9249190062}.wem		\Containers\Default Work Unit\dubsterp		361696
+	149030526	Material 2	.cache\BF\{BFEB9899-4F9E-E44A-F029-80D3C87695FD}.wem		\Containers\Default Work Unit\Environment\Material 2		277832
+	212039369	12	.cache\39\{39E667BE-3819-207E-5266-A5E80953C00E}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\12		237816
+	215908444	9	.cache\A4\{A494D1F4-31D0-E8F2-1056-A2639F5DBF42}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\9		149896
+	237781645	5	.cache\AB\{ABBE62D2-8A65-B6D5-A5D5-A00D496FC8A0}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\5		104808
+	293665682	7	.cache\6D\{6D205C83-AFF8-66C1-7B47-B12331D2BB05}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\7		123220
+	319813022	8	.cache\D4\{D48B83E1-3006-C973-0036-B2931439DDAD}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\8		98944
+	320228459	fire	.cache\EB\{EB712512-C7DA-4015-4515-C9463F4D5BDF}.wem		\Containers\Default Work Unit\Player_Action\Projectile\fire		69508
+	365608378	4	.cache\32\{32DBDC8E-3957-5266-2087-2E1B51FEFC37}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\4		138316
+	378636202	Object_Pick_Up	.cache\A2\{A26B2AB4-E8B6-4689-F623-00829DDB3117}.wem		\Containers\Default Work Unit\Player_Action\Object_Pick_Up		64532
+	714377712	6	.cache\85\{858CB87E-FFB6-2AF1-5565-7791C5234F6D}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\6		150400
+	740502408	Material 1	.cache\9E\{9E4DF51F-F649-87DA-B6EB-0DB259BC12C7}.wem		\Containers\Default Work Unit\Environment\Material 1		244152
+	745029783	13	.cache\F7\{F7E93E39-2CB3-4BF2-E172-6068B8B8764A}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\13		290276
+	750641376	10	.cache\76\{762AA19D-146D-7E83-887A-51341FC40D43}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\10		181312
+	785967723	3	.cache\17\{17D86AF0-1E50-D81A-0266-60228AB1CB89}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\3		90244
 	798274983	Object_Held_Antigrav	.cache\D0\{D0421A39-6F8A-2E5F-FCE4-8815256F0D9F}.wem		\Containers\Default Work Unit\Player_Action\Object_Held_Antigrav		4261264
 	798827070	Sountrack	.cache\70\{700D4D96-94EB-E9B1-F466-9B8EF314288B}.wem		\Containers\Default Work Unit\Music\Music\Music\Sountrack		32131520
+	817096680	11	.cache\9F\{9F27D485-C623-0099-C563-2B8D64FD6AE0}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\11		234996
+	857371766	2	.cache\97\{97A1D39E-1C0B-18C9-67F8-5B211BDEAAC7}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\2		144020
+	980075987	1	.cache\60\{60613342-C8DB-8E74-080F-A06426B7DAA2}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\1		92692
 

@@ -3,17 +3,6 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{68FF79A1-8E5E-47D9-BB01-8C251C60D9E0}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="debstart" ID="{E8914013-E5C6-4D30-B265-3E072B8D2E60}">
-					<ChildrenList>
-						<Action Name="" ID="{867D56EF-3BF7-4EAF-91E0-776572F26E28}" ShortID="937908515">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="dubsterp" ID="{A9C6B132-670C-4F20-B2FE-FA4B87D395F8}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Folder Name="Player_Action" ID="{4359F3CF-9C47-40A5-8331-9167BB87F155}" ShortID="334920604">
 					<ChildrenList>
 						<Event Name="Hold_Obj" ID="{54CC0E99-B4AC-4445-B9FE-A8E4D6FC5ECF}">
@@ -27,30 +16,56 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Grab_Obj" ID="{B686C229-DE8A-412E-9BFB-2755BA2DE6EE}">
+							<ChildrenList>
+								<Action Name="" ID="{9B12C960-7775-45F7-80F3-616B031F0A20}" ShortID="509922540">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Object_Pick_Up" ID="{77398C5C-234C-4C6A-AA92-DE368B2B8460}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fire" ID="{AA6BD2F2-3C58-4758-947E-F3BFEEAD49CC}">
+							<ChildrenList>
+								<Action Name="" ID="{DCC8F336-8B06-416B-9131-8879D2F1BC66}" ShortID="386245796">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Projectile" ID="{E50479F7-8826-4850-A5C1-19F989F8AB46}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Bounce_Metal" ID="{A39B8A80-BC7D-4F32-934E-018B456F495A}">
+				<Folder Name="Environment" ID="{45B40819-1D09-4A01-A470-62E6DEF75D24}" ShortID="1053244396">
 					<ChildrenList>
-						<Action Name="" ID="{855B39C4-42F8-4709-AFF5-0D4E06BD2AFB}" ShortID="840868498">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="BounceMetal" ID="{6B37D508-2BA3-46FE-8625-55989870BAF6}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="Bounce_Metal" ID="{A39B8A80-BC7D-4F32-934E-018B456F495A}">
+							<ChildrenList>
+								<Action Name="" ID="{A6CA002C-FEA2-4E28-B6FE-1A18BF897C79}" ShortID="427518366">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Material 2" ID="{78C9865F-FF21-4904-8BEE-CA845BE8FAF0}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Bounce_Wood" ID="{70E0B2D9-3ABC-464D-AA82-D5C816B8CE1E}">
+							<ChildrenList>
+								<Action Name="" ID="{31C69506-8608-4736-B506-DE4BE8DC58AA}" ShortID="627975951">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Material 1" ID="{C468AE9E-0ED4-437A-9678-5C5A7138D0AE}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="Bounce_Wood" ID="{70E0B2D9-3ABC-464D-AA82-D5C816B8CE1E}">
-					<ChildrenList>
-						<Action Name="" ID="{5CB70DC8-61D4-4830-B1B7-520695E5E130}" ShortID="768881926">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="BounceWood" ID="{FF277D1D-95CE-4346-B9A2-BC7E820675AB}" WorkUnitID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

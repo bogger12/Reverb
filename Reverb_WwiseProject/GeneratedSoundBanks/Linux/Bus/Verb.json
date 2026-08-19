@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3657263530",
+    "Type": "Bus",
+    "GUID": "{44BA300B-9D38-4E60-8701-58C117BD21B9}",
+    "Language": "SFX",
+    "Hash": "{F6BF5F5C-148E-A1DE-0FCE-95C957996E30}",
+    "ObjectPath": "Verb",
+    "ShortName": "Verb",
+    "Path": "Bus/Verb.bnk",
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3673681183",
+       "Name": "Large_Bright_Chamber1",
+       "ObjectPath": "\\Effects\\Factory Effects\\Matrix Reverb\\Large_Bright_Chamber1",
+       "GUID": "{0BFA2291-5716-4759-AC24-F59D29E8F2E4}",
+       "LibName": "Wwise Matrix Reverb",
+       "LibId": "7536643"
+      }
+     ]
+    },
+    "AuxBusses": [
+     {
+      "Id": "3657263530",
+      "Name": "Verb",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb\\Verb",
+      "GUID": "{44BA300B-9D38-4E60-8701-58C117BD21B9}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3673681183"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{780755F3-2A8D-4C9F-94FF-815092A7A916}"
+ }
+}

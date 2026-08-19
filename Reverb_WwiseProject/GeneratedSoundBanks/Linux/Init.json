@@ -10,11 +10,21 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{42B63ABF-E4F7-A435-C445-D268372F93E2}",
+    "Hash": "{F3DAB3A9-5ECB-3AB2-6162-E4B7D2DC0AC0}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3673681183",
+       "Name": "Large_Bright_Chamber1",
+       "ObjectPath": "\\Effects\\Factory Effects\\Matrix Reverb\\Large_Bright_Chamber1",
+       "GUID": "{0BFA2291-5716-4759-AC24-F59D29E8F2E4}",
+       "LibName": "Wwise Matrix Reverb",
+       "LibId": "7536643"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -36,10 +46,31 @@
     },
     "Busses": [
      {
+      "Id": "348963605",
+      "Name": "Reverb",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb",
+      "GUID": "{F5739003-7220-4E7F-A649-C8EBB897323A}"
+     },
+     {
       "Id": "2246998526",
       "Name": "Main Audio Bus",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "3657263530",
+      "Name": "Verb",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb\\Verb",
+      "GUID": "{44BA300B-9D38-4E60-8701-58C117BD21B9}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3673681183"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
@@ -52,6 +83,6 @@
     ]
    }
   ],
-  "FileHash": "{25260147-13C8-EF74-C32D-E0BE31553ECB}"
+  "FileHash": "{436DF711-B740-C20E-D1B3-F01FA085149C}"
  }
 }

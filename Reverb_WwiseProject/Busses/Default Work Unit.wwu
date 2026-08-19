@@ -10,6 +10,28 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="Reverb" ID="{F5739003-7220-4E7F-A649-C8EBB897323A}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{E1B71AA2-4BF3-40B5-98B3-8741D6FC59B6}" WorkUnitID="{E4906764-0417-4097-98B5-98DE170E7261}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AuxBus Name="Verb" ID="{44BA300B-9D38-4E60-8701-58C117BD21B9}">
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{71D750C7-20BF-4627-9077-756EF596D579}" ShortID="702690169">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
+												<ObjectRef Name="Large_Bright_Chamber1" ID="{0BFA2291-5716-4759-AC24-F59D29E8F2E4}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
+					</ChildrenList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>

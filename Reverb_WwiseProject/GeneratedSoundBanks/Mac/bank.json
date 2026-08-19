@@ -10,18 +10,122 @@
     "Type": "User",
     "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
     "Language": "SFX",
-    "Hash": "{DD27100E-D645-0856-9363-31C7E9979B51}",
+    "Hash": "{81F8AD42-4838-E332-219C-A6FA14D1701F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
     "ShortName": "Bank",
     "Path": "Bank.bnk",
     "Media": [
      {
-      "Id": "618176167",
+      "Id": "149030526",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "140_Bass_SP_60.wav",
-      "CachePath": "80/{80ACF44C-3870-C242-49E6-6D9249190062}.wem"
+      "ShortName": "Monkey_Hit.wav",
+      "CachePath": "BF/{BFEB9899-4F9E-E44A-F029-80D3C87695FD}.wem"
+     },
+     {
+      "Id": "212039369",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 12.wav",
+      "CachePath": "39/{39E667BE-3819-207E-5266-A5E80953C00E}.wem"
+     },
+     {
+      "Id": "215908444",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 9.wav",
+      "CachePath": "A4/{A494D1F4-31D0-E8F2-1056-A2639F5DBF42}.wem"
+     },
+     {
+      "Id": "237781645",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 5.wav",
+      "CachePath": "AB/{ABBE62D2-8A65-B6D5-A5D5-A00D496FC8A0}.wem"
+     },
+     {
+      "Id": "293665682",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 7.wav",
+      "CachePath": "6D/{6D205C83-AFF8-66C1-7B47-B12331D2BB05}.wem"
+     },
+     {
+      "Id": "319813022",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 8.wav",
+      "CachePath": "D4/{D48B83E1-3006-C973-0036-B2931439DDAD}.wem"
+     },
+     {
+      "Id": "320228459",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "skitta 3.wav",
+      "CachePath": "EB/{EB712512-C7DA-4015-4515-C9463F4D5BDF}.wem"
+     },
+     {
+      "Id": "365608378",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 4.wav",
+      "CachePath": "32/{32DBDC8E-3957-5266-2087-2E1B51FEFC37}.wem"
+     },
+     {
+      "Id": "378636202",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "ui 3.wav",
+      "CachePath": "A2/{A26B2AB4-E8B6-4689-F623-00829DDB3117}.wem"
+     },
+     {
+      "Id": "714377712",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 6.wav",
+      "CachePath": "85/{858CB87E-FFB6-2AF1-5565-7791C5234F6D}.wem"
+     },
+     {
+      "Id": "740502408",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Water_Hit.wav",
+      "CachePath": "9E/{9E4DF51F-F649-87DA-B6EB-0DB259BC12C7}.wem"
+     },
+     {
+      "Id": "745029783",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 13.wav",
+      "CachePath": "F7/{F7E93E39-2CB3-4BF2-E172-6068B8B8764A}.wem"
+     },
+     {
+      "Id": "750641376",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 10.wav",
+      "CachePath": "76/{762AA19D-146D-7E83-887A-51341FC40D43}.wem"
+     },
+     {
+      "Id": "785967723",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 3.wav",
+      "CachePath": "17/{17D86AF0-1E50-D81A-0266-60228AB1CB89}.wem"
      },
      {
       "Id": "798274983",
@@ -38,20 +142,145 @@
       "Location": "Memory",
       "ShortName": "gdg jam 26 sountrack (so far).wav",
       "CachePath": "70/{700D4D96-94EB-E9B1-F466-9B8EF314288B}.wem"
+     },
+     {
+      "Id": "817096680",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 11.wav",
+      "CachePath": "9F/{9F27D485-C623-0099-C563-2B8D64FD6AE0}.wem"
+     },
+     {
+      "Id": "857371766",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 2.wav",
+      "CachePath": "97/{97A1D39E-1C0B-18C9-67F8-5B211BDEAAC7}.wem"
+     },
+     {
+      "Id": "980075987",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Impact\\impact 1.wav",
+      "CachePath": "60/{60613342-C8DB-8E74-080F-A06426B7DAA2}.wem"
      }
     ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "1852201",
+       "Name": "Tremolo (Custom)",
+       "ObjectPath": "\\Containers\\Default Work Unit\\Player_Action\\Object_Held_Antigrav\\[Effect Slot [0]: (Tremolo)]\\Tremolo (Custom)",
+       "GUID": "{72DFF325-EA41-4368-B36E-936656F0A29C}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      }
+     ]
+    },
     "Events": [
      {
-      "Id": "3195547174",
-      "Name": "debstart",
-      "ObjectPath": "\\Events\\Default Work Unit\\debstart",
-      "GUID": "{E8914013-E5C6-4D30-B265-3E072B8D2E60}",
+      "Id": "2848503745",
+      "Name": "Bounce_Metal",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Bounce_Metal",
+      "GUID": "{A39B8A80-BC7D-4F32-934E-018B456F495A}",
       "DurationType": "OneShot",
-      "DurationMin": "2.04989",
-      "DurationMax": "2.04989",
+      "DurationMin": "1.57447",
+      "DurationMax": "1.57447",
       "MediaRefs": [
        {
-        "Id": "618176167"
+        "Id": "149030526"
+       }
+      ]
+     },
+     {
+      "Id": "1430640511",
+      "Name": "Bounce_Wood",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Bounce_Wood",
+      "GUID": "{70E0B2D9-3ABC-464D-AA82-D5C816B8CE1E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3835374",
+      "DurationMax": "1.3835374",
+      "MediaRefs": [
+       {
+        "Id": "740502408"
+       }
+      ]
+     },
+     {
+      "Id": "2678880713",
+      "Name": "Fire",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Action\\Fire",
+      "GUID": "{AA6BD2F2-3C58-4758-947E-F3BFEEAD49CC}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.51103485",
+      "DurationMax": "1.6450113",
+      "MediaRefs": [
+       {
+        "Id": "212039369"
+       },
+       {
+        "Id": "215908444"
+       },
+       {
+        "Id": "237781645"
+       },
+       {
+        "Id": "293665682"
+       },
+       {
+        "Id": "319813022"
+       },
+       {
+        "Id": "320228459"
+       },
+       {
+        "Id": "365608378"
+       },
+       {
+        "Id": "714377712"
+       },
+       {
+        "Id": "745029783"
+       },
+       {
+        "Id": "750641376"
+       },
+       {
+        "Id": "785967723"
+       },
+       {
+        "Id": "817096680"
+       },
+       {
+        "Id": "857371766"
+       },
+       {
+        "Id": "980075987"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "3657263530",
+        "Name": "Verb",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb\\Verb",
+        "GUID": "{44BA300B-9D38-4E60-8701-58C117BD21B9}"
+       }
+      ]
+     },
+     {
+      "Id": "1969600401",
+      "Name": "Grab_Obj",
+      "ObjectPath": "\\Events\\Default Work Unit\\Player_Action\\Grab_Obj",
+      "GUID": "{B686C229-DE8A-412E-9BFB-2755BA2DE6EE}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.27364543",
+      "DurationMax": "0.36527282",
+      "MediaRefs": [
+       {
+        "Id": "378636202"
        }
       ]
      },
@@ -65,7 +294,14 @@
        {
         "Id": "798274983"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "1852201"
+        }
+       ]
+      }
      },
      {
       "Id": "63796330",
@@ -90,6 +326,6 @@
     ]
    }
   ],
-  "FileHash": "{72FA9341-0F3D-477D-6DD0-9861B8107894}"
+  "FileHash": "{110BB38E-BBA5-20B5-C8D1-11F8626A79EC}"
  }
 }

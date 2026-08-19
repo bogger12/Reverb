@@ -3,46 +3,6 @@
 	<Containers>
 		<WorkUnit Name="Default Work Unit" ID="{BF3E8ECA-BCF9-4D5B-839F-B9D762AFA986}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="dubsterp" ID="{A9C6B132-670C-4F20-B2FE-FA4B87D395F8}" ShortID="845173113">
-					<PropertyList>
-						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-						</Property>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="140_Bass_SP_60" ID="{83AA10CA-4875-4591-8EC6-906B6F24184B}">
-							<PropertyList>
-								<Property Name="LoopBegin" Type="Real64" Value="0"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimEnd" Type="Real64" Value="2.04989"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>140_Bass_SP_60.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="618176167"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="140_Bass_SP_60" ID="{83AA10CA-4875-4591-8EC6-906B6F24184B}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Folder Name="Player_Action" ID="{896C115D-6FB6-42E2-9860-CC9F5898A83C}" ShortID="167703771">
 					<ChildrenList>
 						<Sound Name="Object_Held_Antigrav" ID="{102F8A37-1470-476C-9F80-D8560C743D83}" ShortID="275833618">
@@ -57,6 +17,11 @@
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -84,6 +49,93 @@
 								</AudioFileSource>
 							</ChildrenList>
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{F7FB2072-F94F-4236-8B3D-6103BC0DC308}" ShortID="618163645">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Tremolo (Custom)" ID="{72DFF325-EA41-4368-B36E-936656F0A29C}" ShortID="1852201" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+														<PropertyList>
+															<Property Name="ModDepth" Type="Real32" Value="0"/>
+															<Property Name="ModFrequency" Type="Real32" Value="1.06"/>
+														</PropertyList>
+														<ObjectLists>
+															<ObjectList Name="RTPC">
+																<RTPC Name="" ID="{98B237CC-F245-4619-99B4-9663810E11ED}" ShortID="408379675">
+																	<PropertyList>
+																		<Property Name="PropertyName" Type="string" Value="ModFrequency"/>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="Object_Held_Velocity" ID="{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}" WorkUnitID="{055C3A32-1C4C-4507-87B1-7A21504B0294}"/>
+																		</Reference>
+																		<Reference Name="Curve">
+																			<Custom>
+																				<Curve Name="" ID="{29E4411C-04A4-426F-A559-0F6497CE4127}">
+																					<PropertyList>
+																						<Property Name="Flags" Type="int32" Value="5"/>
+																					</PropertyList>
+																					<PointList>
+																						<Point>
+																							<XPos>0</XPos>
+																							<YPos>2.13402</YPos>
+																							<Flags>5</Flags>
+																						</Point>
+																						<Point>
+																							<XPos>5</XPos>
+																							<YPos>19.86613</YPos>
+																							<Flags>37</Flags>
+																						</Point>
+																					</PointList>
+																				</Curve>
+																			</Custom>
+																		</Reference>
+																	</ReferenceList>
+																</RTPC>
+																<RTPC Name="" ID="{2E20424A-D3E5-4055-BFBC-9AEEE68F3843}" ShortID="864504004">
+																	<PropertyList>
+																		<Property Name="PropertyName" Type="string" Value="ModDepth"/>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="ControlInput">
+																			<ObjectRef Name="Object_Held_Velocity" ID="{7A14C0D9-3FD9-499A-BB3E-07B58ADCAE68}" WorkUnitID="{055C3A32-1C4C-4507-87B1-7A21504B0294}"/>
+																		</Reference>
+																		<Reference Name="Curve">
+																			<Custom>
+																				<Curve Name="" ID="{FB50E6D3-AED4-4837-AF22-C29FEA7E45E2}">
+																					<PropertyList>
+																						<Property Name="Flags" Type="int32" Value="1"/>
+																					</PropertyList>
+																					<PointList>
+																						<Point>
+																							<XPos>0</XPos>
+																							<YPos>-100</YPos>
+																							<Flags>5</Flags>
+																						</Point>
+																						<Point>
+																							<XPos>3.69254</XPos>
+																							<YPos>48.22515</YPos>
+																							<Flags>0</Flags>
+																						</Point>
+																						<Point>
+																							<XPos>5</XPos>
+																							<YPos>100</YPos>
+																							<Flags>37</Flags>
+																						</Point>
+																					</PointList>
+																				</Curve>
+																			</Custom>
+																		</Reference>
+																	</ReferenceList>
+																</RTPC>
+															</ObjectList>
+														</ObjectLists>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<RTPC Name="" ID="{7F95E76E-1E4E-4418-931F-A5C150A4A874}" ShortID="769299216">
 										<PropertyList>
@@ -153,11 +205,1871 @@
 								<ActiveSource Name="Glimmer_Drone" ID="{52B0082F-D985-4979-AABF-9922143C211B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Object_Pick_Up" ID="{77398C5C-234C-4C6A-AA92-DE368B2B8460}" ShortID="606669972">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>34</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{44CEFD18-B581-42E5-ADE9-68F31EC13E5C}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="500"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ui 3" ID="{7269FC0E-0433-43BF-B7AE-C1D7FC868B2F}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.07913"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.21539"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.02348"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>ui 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="378636202"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ui 3" ID="{7269FC0E-0433-43BF-B7AE-C1D7FC868B2F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<BlendContainer Name="Projectile" ID="{E50479F7-8826-4850-A5C1-19F989F8AB46}" ShortID="868096609">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{89B9DE66-1F74-42EF-BAEB-6F6232013B30}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-30</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Verb" ID="{44BA300B-9D38-4E60-8701-58C117BD21B9}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Proj_Fire_Extra" ID="{4B009B84-2F1F-4E4B-8178-6804C4D15C0C}" ShortID="801314010">
+									<PropertyList>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="1" ID="{8D225192-2D7A-4737-B2D7-3B41B48C69E3}" ShortID="854552706">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{1210E485-B767-4CF6-99BF-E7689869BAC1}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{C8852CC8-E227-4AD5-A892-66954F243569}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{DB0C132A-25AE-44C1-80B2-7E57735C0852}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{5A622702-FE5F-4ED5-80FD-CA2F9AD6BB52}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{291B035B-104C-4886-838D-08D3DDCE7AA4}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{C84CA43E-FA6F-46CC-BCE1-5F09369D8A87}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="643653237"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{AD44DB07-F6B4-4828-A098-3EB560D71A07}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="635799787"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{9C138248-965F-46C7-8BD0-0DF88F20E15C}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="513592958"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{57893198-7FFF-49CD-9934-B15B8A4C40BC}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{1285157E-98E6-44CB-812E-135A799ACCE2}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{7B42261B-C793-4350-A87C-E9626C02AF1C}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="801823945"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{2D8DF13E-C70B-4CC4-9CFC-2B861F35E6C1}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{7DA157F9-AA38-4E08-8DBA-D2F97B7DAD35}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 1" ID="{1210E485-B767-4CF6-99BF-E7689869BAC1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="2" ID="{564EA85C-0917-4906-AFE4-6EF50A71CB32}" ShortID="1000946638">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{DB23313B-2A67-407F-9F60-2504DBA30985}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{F496FF5B-4878-4F8A-990B-862928FCA9E8}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{A58A4093-6305-4575-BD06-9039EB82740A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{F7034E0F-AF16-4F7D-A1E2-15A4E3FCEADA}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{9A5B80CE-7D27-43D7-8A05-53D577B3333A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{0EF0C4F0-81BE-4220-BD6F-BC0288A16DCC}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{DD486E50-DBB4-4FF4-8672-FA7B89BD5DA1}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="635799787"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{2E00CA2D-B40E-41DB-B4F2-D60C07BAFAB2}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="513592958"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{5E71FFD1-8D84-4983-8361-35699F159F3B}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{817F8954-754D-411D-992D-F3EF50FFCD43}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{930BDA66-43A8-4C69-BD3A-4B1DAAC9735F}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="801823945"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{A60851B2-3657-4D7A-B5CB-E7B157158FAC}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{93457470-AC9A-438C-AFAD-43454CB5ACC6}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 2" ID="{0EF0C4F0-81BE-4220-BD6F-BC0288A16DCC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="3" ID="{6C88D506-C937-42F0-9245-B6F8064F187C}" ShortID="877251457">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{F011A075-906E-4849-B119-AE93AD064C36}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{3B64CDB5-1F95-4D64-8FDE-67770CBA276B}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{F6AE05CE-0D7B-4A54-9A9E-26C576BA4BDC}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{C33DCFFB-5C58-463B-B8CF-8F59A805B3E9}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{4DB9215D-CFEC-460A-93E4-F154553CB683}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{3C670F3F-76AD-4A0A-A5EC-2D4A5E023D16}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{93C7A8F9-04EC-4A32-9029-971523DECC6E}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{224BF0AA-5FBF-40ED-8592-24C865E2FA1A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="513592958"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{E3E05FD5-2A8D-406E-9057-C37B1C7D7953}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{458CF9CD-B6D8-4F7D-92E0-398F612460BE}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{A58924C4-59B9-4597-9D0A-D5C711C38552}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="801823945"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{F8FD356D-886A-4F5D-8F4E-BD23CCB7DAFC}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{D5EE183D-C48D-43BC-A6AC-C7B2BF493485}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 3" ID="{93C7A8F9-04EC-4A32-9029-971523DECC6E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="4" ID="{BB95A2D2-A375-4D10-AB1A-3F6CE87A53E0}" ShortID="139199749">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{40F364D0-4CB3-45F0-BEA8-2A254179C317}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{76390ADB-8880-49F5-8334-6B5584F45B7A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{173E85CC-E191-4FB4-AB14-66E8183F574E}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{5BF9F81B-AC7A-494B-B65B-C0C84C5248E6}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{60F34CC8-4609-4376-BBE2-FDC83D8F102B}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{163ADE14-E6BD-422F-831D-2A7604E58DFA}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{1BE0D6C2-A61E-4AEE-A179-124F7E0B1E7B}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{D9743491-5414-4F7B-AFDA-DC1A9ECB2A6E}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{A51F2E1B-0C2E-49F7-9B1B-EF1BB8EC3698}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{0218B24D-8F69-4947-98B3-A68975AB82F3}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{333E3F3E-8A0F-40E2-8A81-AB367E84C82E}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="801823945"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{D9DAE73B-2628-41F2-8F96-F9C76EC39118}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{B0BA2903-B883-4DFB-8182-67BC08DE0453}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 4" ID="{D9743491-5414-4F7B-AFDA-DC1A9ECB2A6E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="5" ID="{4B70B90C-80DF-4C84-9E9B-0CF139847D1B}" ShortID="352480519">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{D5DE7341-9283-457D-911F-C08FBD62AC97}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{CBA01E89-F1F1-4D49-BCCE-219CA9B2E018}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{4FF17901-F115-421E-BECD-C55ECA40DF38}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{1A0989B7-508B-4028-A5D5-C90160A5E8C4}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{707F9279-0B99-4C07-9E50-EB36B7E8934A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{4083D483-9D1D-42E7-9F7F-B0FBDD8AE98F}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{0D11987C-9431-4CC6-8489-78AD73881BDC}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{20D75653-1E20-4BEF-A5E9-71C187E080CB}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{2F075060-1395-4158-ACE7-EC3AABBFA5E4}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{1201EE8F-C954-4F83-BB9F-C6EFAB8AC1EF}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{1B246377-0329-43F9-AECC-C1EC90287CBF}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="801823945"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{28B9D971-FA46-4F33-A666-A5A1DF4AE126}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{639BB26A-28DE-417E-9548-1AB1304A213B}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{2E445C64-D2DD-4C47-BD18-DC60BFB45759}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 5" ID="{2F075060-1395-4158-ACE7-EC3AABBFA5E4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="6" ID="{0BAC8C79-A82C-4E5F-9A47-793020F2B6BF}" ShortID="968071786">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{55044091-DDCD-4AAF-853E-4FBDADB8DCEA}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{5E0E42C1-CF90-489B-A8FC-0126F1A25277}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{08B4A29B-3B32-4889-85F2-823156DEE2B5}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{063813A9-FE57-479A-AD9A-F02A2C610A59}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{500F72B3-A5BE-42DE-A3E4-D4F743181508}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{2244F74C-FF89-468B-8231-978DA4047479}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{28D24466-BBC9-416F-B4A0-F8934EBE6266}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{A1D4B670-9841-4979-A37F-14DEBBA815C0}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{9E56F119-FE2D-41BC-992C-34AA5EF024B7}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{F43E4011-6658-4514-8971-0A79D09877A4}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{A8E6352E-B043-45E6-AE75-534BB8D932F8}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="801823945"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{9FBC4B4A-2B72-4705-891E-3523F78193F7}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{BE5E35C1-2901-4562-B15C-B3DE0A036CCD}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{8D10B45B-7CB3-4CE9-94AD-82B9E55E43E5}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 6" ID="{F43E4011-6658-4514-8971-0A79D09877A4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="7" ID="{39E180F9-C51B-4BB8-824B-195C44ED4C61}" ShortID="86051615">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{C7868DA8-132C-48C8-BB15-6C81291DA615}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{887E33A4-A522-4D68-ADCF-2320AFACD1FB}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{46ACF10A-A844-4B68-988D-574099321C51}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{EEDC7094-2574-4F5F-80FE-1D659641A219}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{749F71B4-AFCB-4D1F-BE13-72689ACA717D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{84F247A5-75C3-4F26-BA6D-D232E2A228BB}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{3186C49D-5C24-4936-8D88-36C098EA9D80}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{32555D0F-0825-4CFF-A08E-1AC1E3AB81B9}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{E9F3DCD3-72BC-4ECD-8742-235C3235427D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{8417FCF6-25D7-442B-9DEF-E593F4436E58}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{637CDA39-CC32-46DE-B27E-0FE7407D445B}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{5EB0E188-3305-4D13-8491-1DE1C1C0748E}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{9761058F-C2B0-4A8F-AB55-2CF344FF303A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{F245CD4C-E22F-47FA-9C3C-71E52D902115}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 7" ID="{637CDA39-CC32-46DE-B27E-0FE7407D445B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="8" ID="{8C7C8CF5-EC0A-4276-9F2A-B3AE4CD6247E}" ShortID="10472476">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{7B5CA0FA-4E52-4B6B-BE4A-002F68D9C9EC}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{7CE41A4F-B0AF-462E-BEB9-95A9A8A27023}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{A1FC7929-947C-4D03-ACFC-056543F02E88}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{036C51B5-F426-4EF2-A0C1-0D78FCFD1F4D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{90E712B1-513A-4365-8E64-2514F1A1A5F1}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{2E68E37A-D6C7-4EB5-97E1-3CEC0664C43A}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{1516DC21-D41D-4462-AB0B-8D3D2DDE354F}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{0C1BA5AC-0D83-4E89-9D77-72A26208E886}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{3708693C-F5F2-44E1-A897-2191648BC2A9}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{23E2B32F-FD91-4AC9-BA4D-9DD86AE7DD4B}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{F8326EDB-9A59-4031-8192-1799CCE0509E}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{C2CBAFBE-6BBA-4F24-9C89-05045B263B08}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{0EB43833-2BB3-47D2-BE20-546048A7B988}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="717202379"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{F3A94FEA-AD45-4D02-B4A2-F140CEA5A18A}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 8" ID="{C2CBAFBE-6BBA-4F24-9C89-05045B263B08}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="9" ID="{83B71613-EE28-4787-ACE0-5548B8448CDF}" ShortID="462070926">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{B8C54F48-551F-45B0-920E-DA094797ED2F}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{184FE5E8-9D1E-4D58-8A22-943D62F6FCF5}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{10BC9C17-1124-4DBF-A74E-18179320D1B5}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{F0F7BEC9-C6B9-4F38-9070-C6C16F45C062}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{ECB4D689-55E3-4D44-B2E9-C34E7011FE76}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{5EC1B356-839F-47BC-B3B9-98A237116BB0}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{B71CB3D7-9624-4500-9C07-0A5C6DF0BE4E}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{4E0BD785-5E5E-4BA2-9935-D151C3431A1E}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{549EA8C0-BC94-47E8-9F4D-E8AD54FAE135}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{21EA365B-C08A-43F2-8A30-A617CB748A12}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{43705286-4847-4E57-95C0-104644229CC2}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{F930BE91-EA32-4DAE-8141-55321AEC9291}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{40E4BF1C-7BE3-4281-971A-92440D2FE647}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00985"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00985"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="215908444"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{EE7C3D65-9FDD-4A90-AD0B-595942987830}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 9" ID="{40E4BF1C-7BE3-4281-971A-92440D2FE647}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="10" ID="{7900D61A-1FBF-435F-A8F4-7658289F22AE}" ShortID="189085014">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{7E3A364C-73AD-40AD-9243-29C6CB674A86}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{1D3BB8BE-9201-4149-BFE7-33A0A9FFF3FE}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{DF19CC4C-4D2D-41E1-A1FB-BAECA2D509AC}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{98F87D7E-67AD-4D39-989A-8F8E5D59F6BA}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{29A6D64E-112A-484A-BAEF-4EC02AB5D9A2}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{418169EB-85CE-4909-ABE6-55084DF67B3C}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{47A8FD08-B624-4283-BA2B-915BDC93E480}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{F95D4274-87C1-45DA-A40B-E72255EBCC79}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{B02E3460-D71D-4815-B5A8-0A353DEB44E5}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{44D97721-F8C5-4F67-B8D6-B5F4981FBF74}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{6267E52D-0A83-4802-9CDF-0B9EB98C5B20}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{6DAB31EC-EEA8-4D3C-A9F8-09675C487BD2}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{9737F6AD-1051-4B62-AF31-FAA7CED21C04}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00985"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00985"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="215908444"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{1F72BE46-09D0-4EBF-A6B9-825131157604}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 10" ID="{1D3BB8BE-9201-4149-BFE7-33A0A9FFF3FE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="11" ID="{083BB2BB-E1B8-466F-AF39-E363F9DA35E1}" ShortID="597570472">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{2BEDFA74-13D9-4A8D-9706-7E2448787952}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{F77B5691-66E4-4295-A4D0-A02CF186FCBF}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{5CCD33FB-AAC1-42CE-8397-F1CB47189046}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{A81B0B6B-60DF-4AB9-AEE5-6C1A19B7A96E}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{E22B7910-1284-4893-9AF6-16D4C75DA060}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{67F5AFCE-171F-448B-A6CA-4E2F0FF7C597}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{7AD636D7-E713-47A9-B662-A05AE9F39720}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{430E6DAC-0DE5-4E9E-AF17-AD2AA4E42F34}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{F0064479-556B-4E12-A6A6-690C1B0EBFBB}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{6BFE0373-4EC7-4AFC-A799-6F58DB68A254}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{181BC218-42AA-49FA-882E-5842965E3D50}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{3E638C95-DF75-4B8B-B601-E33DC6DD1339}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{B46C2230-EC25-42F2-BCE1-9194C1B6E5D2}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00985"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00985"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="215908444"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{9890604A-7731-4829-BEA5-D3E8AFCDB426}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 11" ID="{5CCD33FB-AAC1-42CE-8397-F1CB47189046}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="12" ID="{525430B5-85E1-45E6-92F0-99AF81F1B3A1}" ShortID="458507189">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{194D8382-3E64-4573-B105-365D84704A98}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{4E76199F-A001-49AF-B086-92C24C5E73B0}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{804649F4-4A36-45C0-84CE-389D10C797BD}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{6A798233-58BC-4D96-97BC-717C6C997844}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{35D64548-64CA-4D3C-A3CE-28C339F2E840}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{B6DBAA88-6A4B-4843-A77B-40A427D79E5E}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{2A787179-5B39-4203-929F-6BE725CC4FB0}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{DF9A4CB6-2A44-4F4B-8232-6A4848F742B4}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{13672719-B320-4C2F-8D4F-FEFFA661A2F4}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{9F3167A6-D255-4BC9-82F7-293006F91B91}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{688D7EC4-3AFA-4517-8390-BE457BD3BEB4}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{7944E5F8-A919-485B-B879-998877192CF8}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{F0A124B1-9171-40BD-B44A-570380AEDBB9}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00985"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00985"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="215908444"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{E0BCA446-EE0A-4E51-8ECF-5F0DB294C852}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 12" ID="{6A798233-58BC-4D96-97BC-717C6C997844}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="13" ID="{2A3C1FA8-7ECD-446A-8763-7777C2152876}" ShortID="36542275">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="impact 1" ID="{183BE4BE-C037-4B09-8D87-0F7D5466A572}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="980075987"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 10" ID="{54908BBE-E31B-4CA5-95D9-7B49A204A74D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="750641376"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 11" ID="{3EB53675-961A-4B4D-B8B8-43900852697D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="817096680"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 12" ID="{170A5911-D3AF-42CE-91D4-FAC35670CD9D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="212039369"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 13" ID="{7A5CA869-1054-4805-B510-58011F173013}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="745029783"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 2" ID="{59BEB630-41B2-4413-A673-973A25E49A01}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.02486"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.02486"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="857371766"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 3" ID="{E89511FF-4A81-47E7-8860-7D572E166F15}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00443"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00443"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="785967723"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 4" ID="{EC8001C3-DEA5-4E90-8E09-A5E3AF4C23A3}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.03434"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.03434"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="365608378"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5" ID="{BDF3AF1D-6024-4A06-A765-0A3E04CAD362}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 6" ID="{E7F4C62B-71A6-4DF0-9230-56F8E3634B66}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="714377712"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 7" ID="{A7F62213-3666-47B8-A8DF-ADCD9F283459}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.01153"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.01153"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="293665682"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 8" ID="{2D485110-A904-4A36-A729-59A8CF84F86D}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="319813022"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 9" ID="{5027700C-72DB-4E25-A5B4-875EA3E0304D}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="0.00985"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.00985"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 9.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="215908444"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="impact 5_01" ID="{C8C1258D-D9BD-4A5E-B945-70967D0A664E}">
+													<Language>SFX</Language>
+													<AudioFile>Impact\impact 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237781645"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="impact 13" ID="{7A5CA869-1054-4805-B510-58011F173013}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<Sound Name="fire" ID="{8698AD12-AB26-475F-BC02-CE1BF414359E}" ShortID="795038798">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>43</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-480</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{E6A8B4E1-10AA-463D-BA82-10B70F3A20FC}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="275"/>
+															<Property Name="Min" Type="Real64" Value="-275"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="skitta 3" ID="{B4041BB6-4B2F-47B7-AB15-C952C8DD33E2}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.36432"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.04987"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.44335"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>skitta 3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="320228459"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="skitta 3" ID="{B4041BB6-4B2F-47B7-AB15-C952C8DD33E2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Music" ID="{4AC1F435-15C4-4FA4-AF6B-B2E4F8FC5DFE}" ShortID="168547391">
 					<ChildrenList>
 						<MusicPlaylistContainer Name="Music" ID="{8BBFB182-C98A-4285-AC2C-C580ECEF478F}" ShortID="765765843">
+							<PropertyList>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
@@ -275,6 +2187,59 @@
 								</MusicSegment>
 							</ChildrenList>
 						</MusicPlaylistContainer>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Environment" ID="{A8D9F2A8-029E-4B1A-A887-FF145CF1BF9A}" ShortID="640494165">
+					<ChildrenList>
+						<Sound Name="Material 1" ID="{C468AE9E-0ED4-437A-9678-5C5A7138D0AE}" ShortID="13488701">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Water_Hit" ID="{9BB1EA96-99F4-4976-968E-2D397FDDEFEA}">
+									<Language>SFX</Language>
+									<AudioFile>Water_Hit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="740502408"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Water_Hit" ID="{9BB1EA96-99F4-4976-968E-2D397FDDEFEA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Material 2" ID="{78C9865F-FF21-4904-8BEE-CA845BE8FAF0}" ShortID="589759866">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Monkey_Hit" ID="{B0C3714B-8A66-41D8-ACB2-AACEB156D816}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.12671"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.57447"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Monkey_Hit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="149030526"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Monkey_Hit" ID="{B0C3714B-8A66-41D8-ACB2-AACEB156D816}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

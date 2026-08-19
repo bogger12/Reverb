@@ -15,7 +15,8 @@ namespace AK
     {
         static const AkUniqueID BOUNCE_METAL = 2848503745U;
         static const AkUniqueID BOUNCE_WOOD = 1430640511U;
-        static const AkUniqueID DEBSTART = 3195547174U;
+        static const AkUniqueID FIRE = 2678880713U;
+        static const AkUniqueID GRAB_OBJ = 1969600401U;
         static const AkUniqueID HOLD_OBJ = 2959096816U;
         static const AkUniqueID MAIN_MUSIC = 63796330U;
     } // namespace EVENTS
@@ -34,7 +35,13 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
+        static const AkUniqueID REVERB = 348963605U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID VERB = 3657263530U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

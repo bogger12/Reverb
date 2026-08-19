@@ -1,0 +1,6 @@
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	3657263530	Verb			\Default Work Unit\Reverb\Verb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3673681183	Large_Bright_Chamber1	Wwise Matrix Reverb			
+

@@ -44,6 +44,7 @@ public class Holder : MonoBehaviour
 
                 if (heldObject == null)
                 {
+                    AkUnitySoundEngine.PostEvent("Grab_Obj", gameObject);
                     AkUnitySoundEngine.PostEvent("Hold_Obj", gameObject);
                     GameObject objectHit = hit.collider.gameObject;
                     if (objectHit.TryGetComponent(out Rigidbody rb))
