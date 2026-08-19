@@ -39,7 +39,7 @@ public class Holder : MonoBehaviour
         {
             hitPoint = hit.point;
 
-            if (Input["Interact"].IsPressed())
+            if (Input["Hold"].IsPressed())
             {
 
                 if (heldObject == null)
