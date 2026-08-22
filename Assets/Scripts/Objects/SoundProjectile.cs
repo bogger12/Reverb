@@ -42,9 +42,15 @@ public class SoundProjectile : MonoBehaviour
             patternofsound.Add(soundSurface.material.ToString());
             print(string.Join(", ", patternofsound));
 
+            if (string.Join(", ", patternofsound) == "Concrete, Wood, Metal")
+            {
+                print("u did it");
+            }
+
         }
         direction = Vector3.Reflect(direction, collision.contacts[0].normal);
         rigidbody.linearVelocity = speed * direction;
+
       
 
 
