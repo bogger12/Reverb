@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{8EAD7BDD-79D5-48BC-BF89-B889E413A339}",
     "Language": "SFX",
-    "Hash": "{81F8AD42-4838-E332-219C-A6FA14D1701F}",
+    "Hash": "{1898E537-EDFD-E8DF-238E-A287FB135E24}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Bank",
     "ShortName": "Bank",
     "Path": "Bank.bnk",
@@ -86,6 +86,14 @@
       "Location": "Memory",
       "ShortName": "ui 3.wav",
       "CachePath": "A2/{A26B2AB4-E8B6-4689-F623-00829DDB3117}.wem"
+     },
+     {
+      "Id": "421151750",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rock_Hit.wav",
+      "CachePath": "D6/{D61CB2C1-1C7F-D9D4-271E-D78EE1151C94}.wem"
      },
      {
       "Id": "714377712",
@@ -182,10 +190,26 @@
     },
     "Events": [
      {
+      "Id": "2843606641",
+      "Name": "Bounce_Concrete",
+      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Bounce_Concrete",
+      "GUID": "{2E6C9047-6CEC-4C38-B596-EE72C09BCCE9}",
+      "MaxAttenuation": "100",
+      "DurationType": "OneShot",
+      "DurationMin": "4.126349",
+      "DurationMax": "4.126349",
+      "MediaRefs": [
+       {
+        "Id": "421151750"
+       }
+      ]
+     },
+     {
       "Id": "2848503745",
       "Name": "Bounce_Metal",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Bounce_Metal",
       "GUID": "{A39B8A80-BC7D-4F32-934E-018B456F495A}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.57447",
       "DurationMax": "1.57447",
@@ -200,6 +224,7 @@
       "Name": "Bounce_Wood",
       "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Bounce_Wood",
       "GUID": "{70E0B2D9-3ABC-464D-AA82-D5C816B8CE1E}",
+      "MaxAttenuation": "100",
       "DurationType": "OneShot",
       "DurationMin": "1.3835374",
       "DurationMax": "1.3835374",
@@ -326,6 +351,6 @@
     ]
    }
   ],
-  "FileHash": "{110BB38E-BBA5-20B5-C8D1-11F8626A79EC}"
+  "FileHash": "{779CD3B6-4F03-C674-7CE1-ACC3EAD366E0}"
  }
 }

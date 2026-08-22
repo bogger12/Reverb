@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class SoundGun : MonoBehaviour
 {
     public Transform shootFrom;
-    public float projectileSpeed = 1f;
+    public float projectileSpeed;
 
     public SoundProjectile soundProjectile;
 

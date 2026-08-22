@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1430640511	Bounce_Wood			\Default Work Unit\Environment\Bounce_Wood	
 	1969600401	Grab_Obj			\Default Work Unit\Player_Action\Grab_Obj	
 	2678880713	Fire			\Default Work Unit\Player_Action\Fire	
+	2843606641	Bounce_Concrete			\Default Work Unit\Environment\Bounce_Concrete	
 	2848503745	Bounce_Metal			\Default Work Unit\Environment\Bounce_Metal	
 	2959096816	Hold_Obj			\Default Work Unit\Player_Action\Hold_Obj	
 
@@ -22,6 +23,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	320228459	fire	.cache\EB\{EB712512-C7DA-4015-4515-C9463F4D5BDF}.wem		\Containers\Default Work Unit\Player_Action\Projectile\fire		69508
 	365608378	4	.cache\32\{32DBDC8E-3957-5266-2087-2E1B51FEFC37}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\4		138316
 	378636202	Object_Pick_Up	.cache\A2\{A26B2AB4-E8B6-4689-F623-00829DDB3117}.wem		\Containers\Default Work Unit\Player_Action\Object_Pick_Up		64532
+	421151750	Material 3	.cache\D6\{D61CB2C1-1C7F-D9D4-271E-D78EE1151C94}.wem		\Containers\Default Work Unit\Environment\Material 3		727984
 	714377712	6	.cache\85\{858CB87E-FFB6-2AF1-5565-7791C5234F6D}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\6		150400
 	740502408	Material 1	.cache\9E\{9E4DF51F-F649-87DA-B6EB-0DB259BC12C7}.wem		\Containers\Default Work Unit\Environment\Material 1		244152
 	745029783	13	.cache\F7\{F7E93E39-2CB3-4BF2-E172-6068B8B8764A}.wem		\Containers\Default Work Unit\Player_Action\Projectile\Proj_Fire_Extra\13		290276

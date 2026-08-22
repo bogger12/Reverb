@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundGun
   shootFrom: {fileID: 3654284569761959703}
-  projectileSpeed: 2
+  projectileSpeed: 10
   soundProjectile: {fileID: 8209677705507223490, guid: 09ffae7c5b97346899ea8ecf49dda8b9, type: 3}
   Input: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &5620524313377324720
@@ -1419,6 +1419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerTarget: {fileID: 4362765969272996250}
+  companionNavMeshAgent: {fileID: 0}
 --- !u!1 &7588581257589439699
 GameObject:
   m_ObjectHideFlags: 0

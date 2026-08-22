@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BOUNCE_CONCRETE = 2843606641U;
         static const AkUniqueID BOUNCE_METAL = 2848503745U;
         static const AkUniqueID BOUNCE_WOOD = 1430640511U;
         static const AkUniqueID FIRE = 2678880713U;
