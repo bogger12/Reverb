@@ -10,6 +10,8 @@ public class Raycast : MonoBehaviour
 
     public float maxDistance = 200f;
 
+    public Transform emitFromPoint;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +22,7 @@ public class Raycast : MonoBehaviour
     void Update()
     {
 
-        Vector3 origin = transform.position + transform.up * 0.05f + transform.right * 0.15f;
+        Vector3 origin = emitFromPoint.position;
         Vector3 direction = transform.forward;
 
         List<Vector3> points = new List<Vector3>();
@@ -49,6 +51,7 @@ public class Raycast : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        Gizmos.DrawRay(emitFromPoint.position, transform.forward * 1f);
         if (!lineRenderer) return;
         Vector3[] positions = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(positions);

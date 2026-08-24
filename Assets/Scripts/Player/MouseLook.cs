@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /* 
 
@@ -36,6 +37,9 @@ public class MouseLook : MonoBehaviour
     [Tooltip("if cutscene mode, player can still look but it'll pull back automatically")]
     public bool cutSceneMode = false;
 
+    public InputActionAsset PlayerInput;
+
+
     public static float ClampAngle(float angle, float min, float max)
     {
         angle = angle % 360;
@@ -65,6 +69,8 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        bool lockRotation = PlayerInput["Crouch"].IsPressed();
+
         if (working)
         {
             if (cutSceneMode)
@@ -84,9 +90,13 @@ public class MouseLook : MonoBehaviour
             {
                 if (axes == RotationAxes.MouseXAndY)
                 {
+
                     // Read the mouse input axis
-                    rotationX += Input.GetAxis("Mouse X") * sensitivityX;
-                    rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                    if (!lockRotation)
+                    {
+                        rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+                        rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                    }
 
                     rotationX = ClampAngle(rotationX, minimumX, maximumX);
                     rotationY = ClampAngle(rotationY, minimumY, maximumY);
@@ -96,7 +106,8 @@ public class MouseLook : MonoBehaviour
                 }
                 else if (axes == RotationAxes.MouseX)
                 {
-                    rotationX += Input.GetAxis("Mouse X") * sensitivityX;
+                    if (!lockRotation)
+                    { rotationX += Input.GetAxis("Mouse X") * sensitivityX; }
 
                     rotationX = ClampAngle(rotationX, minimumX, maximumX);
                     Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);
@@ -104,7 +115,8 @@ public class MouseLook : MonoBehaviour
                 }
                 else
                 {
-                    rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                    if (!lockRotation)
+                    { rotationY += Input.GetAxis("Mouse Y") * sensitivityY; }
 
                     rotationY = ClampAngle(rotationY, minimumY, maximumY);
                     Quaternion yQuaternion = Quaternion.AngleAxis(-rotationY, Vector3.right);

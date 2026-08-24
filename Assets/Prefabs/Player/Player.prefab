@@ -845,6 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Raycast
   maxBounces: 3
   maxDistance: 200
+  emitFromPoint: {fileID: 0}
 --- !u!120 &6078693024658851847
 LineRenderer:
   serializedVersion: 3
@@ -1344,6 +1345,7 @@ MonoBehaviour:
   lockCursor: 1
   working: 1
   cutSceneMode: 0
+  PlayerInput: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &5657381341425318384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1419,6 +1421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerTarget: {fileID: 4362765969272996250}
+  companionNavMeshAgent: {fileID: 0}
 --- !u!1 &7588581257589439699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1497,7 @@ MonoBehaviour:
   lockCursor: 1
   working: 1
   cutSceneMode: 0
+  PlayerInput: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &7601624478428929617
 GameObject:
   m_ObjectHideFlags: 0

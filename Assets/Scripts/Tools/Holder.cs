@@ -22,6 +22,7 @@ public class Holder : MonoBehaviour
 
     private Rigidbody heldObject;
     private Vector3 hitPoint;
+    private Quaternion targetBodyRotation = Quaternion.identity;
 
     private bool heldObjectGravity;
 
@@ -52,6 +53,7 @@ public class Holder : MonoBehaviour
                         heldObject = rb;
                         heldObjectGravity = heldObject.useGravity;
                         heldObject.useGravity = false;
+                        targetBodyRotation = heldObject.rotation;
                     }
                 }
 
@@ -83,8 +85,21 @@ public class Holder : MonoBehaviour
             float restitution = Mathf.InverseLerp(0, restitutionRadius, distance) * restitutionStrength + (1 - restitutionStrength);
             heldObject.linearVelocity *= restitution * dampeningCoefficient;
 
+            if (Input["Crouch"].IsPressed())
+            {
+                float sensitivity = 1f;
+
+                Vector2 lookChange = Input["Look"].ReadValue<Vector2>() * sensitivity;
+
+                Quaternion xQuaternion = Quaternion.AngleAxis(lookChange.x, Vector3.up);
+                Quaternion yQuaternion = Quaternion.AngleAxis(lookChange.y, Vector3.right);
+                targetBodyRotation = xQuaternion * yQuaternion * targetBodyRotation;
+            }
+            // Rotate towards target rotations
+            heldObject.MoveRotation(Quaternion.Slerp(heldObject.rotation, targetBodyRotation, 0.1f).normalized);
         }
     }
+
 
     void OnDrawGizmos()
     {
