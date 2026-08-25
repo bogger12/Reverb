@@ -15,18 +15,31 @@ public class SoundSurface : MonoBehaviour
     public Material material;
 
     public event Action<Material, GameObject> OnSoundCollision;
+    public event Action<Material, GameObject> OnSoundReflectEnter;
+    public event Action<Material, GameObject> OnSoundReflectExit;
+
+
     void OnEnable()
     {
-        OnSoundCollision += PlaySound;
+
     }
 
-    public void SoundCollide(Material material, GameObject fromObject)
+    public void SoundCollide(GameObject fromObject)
     {
         OnSoundCollision.Invoke(material, fromObject);
+        AkUnitySoundEngine.PostEvent(string.Format("Bounce_{0}", material), fromObject); // Bounce_Metal
     }
 
-    private static void PlaySound(Material material, GameObject gameObject)
+
+    public void BeginRaySound(GameObject fromObject)
     {
-        AkUnitySoundEngine.PostEvent(string.Format("Bounce_{0}", material), gameObject); // Bounce_Metal
+        OnSoundReflectEnter.Invoke(material, fromObject);
     }
+
+    public void EndRaySound(GameObject fromObject)
+    {
+        OnSoundReflectExit.Invoke(material, fromObject);
+    }
+
+
 }

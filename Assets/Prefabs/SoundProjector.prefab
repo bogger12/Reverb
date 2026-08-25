@@ -270,9 +270,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007961b5e129f4baabb7b98ceba89e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Raycast
-  maxBounces: 3
+  strength: 3
+  tone: 0
   maxDistance: 200
   emitFromPoint: {fileID: 3562074167255120980}
+  startsActive: 1
+  includeLayers:
+    serializedVersion: 2
+    m_Bits: 439
 --- !u!54 &7248771050142935290
 Rigidbody:
   m_ObjectHideFlags: 0

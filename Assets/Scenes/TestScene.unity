@@ -378,6 +378,7 @@ MonoBehaviour:
   - {fileID: 1602783015}
   - {fileID: 1711695774}
   soundOrder: 0000000001000000
+  timeWindowSeconds: 10
 --- !u!4 &398973157
 Transform:
   m_ObjectHideFlags: 0
