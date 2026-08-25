@@ -32,15 +32,12 @@ public class SoundRay : Activateable
     private List<Vector3> pointsHit = new List<Vector3>();
     private List<SoundSurface> surfacesHit = new List<SoundSurface>();
     private float totalDistance = 0;
-    private Vector3 origin;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = startsActive;
-        origin = emitFromPoint.position;
-
     }
 
     // Update is called once per frame
@@ -48,20 +45,21 @@ public class SoundRay : Activateable
     {
 
         Vector3 direction = transform.forward;
+        Vector3 lastPoint = emitFromPoint.position;
 
-        pointsHit = new List<Vector3> { origin };
+        pointsHit = new List<Vector3> { lastPoint };
         totalDistance = 0;
         List<SoundSurface> lastSurfacesHit = surfacesHit;
         surfacesHit = new List<SoundSurface>();
 
         for (int i = 0; i < strength; i++)
         {
-            if (Physics.Raycast(origin, direction, out RaycastHit hit, maxDistance, includeLayers))
+            if (Physics.Raycast(lastPoint, direction, out RaycastHit hit, maxDistance, includeLayers))
             {
                 pointsHit.Add(hit.point);
                 direction = Vector3.Reflect(direction, hit.normal);
 
-                origin = hit.point + direction * 0.001f;
+                lastPoint = hit.point + direction * 0.001f;
                 totalDistance += hit.distance;
                 if (hit.transform.TryGetComponent(out SoundSurface surface))
                 {
@@ -74,7 +72,7 @@ public class SoundRay : Activateable
             }
             else
             {
-                pointsHit.Add(origin + direction * maxDistance);
+                pointsHit.Add(lastPoint + direction * maxDistance);
                 break;
             }
         }
@@ -89,12 +87,12 @@ public class SoundRay : Activateable
         lineRenderer.positionCount = pointsHit.Count;
         lineRenderer.SetPositions(pointsHit.ToArray());
 
-        // Update audio here
+        // TOSOUND: Update audio here
 
-        // totalDistance = distance of ray
+        // totalDistance = total length of ray
         // surfacesHit = surfaces hit - each has material
         // tone = laser colour/sound tone -> use nameof(tone)
-        string toneName = nameof(tone); // can use this for event calling
+        string toneName = nameof(tone); // can use this for event calling based on color/tone of ray
 
     }
 
@@ -108,24 +106,39 @@ public class SoundRay : Activateable
         lineRenderer.enabled = false;
     }
 
-    // public GetDistanceFromRay(Vector3 position)
-    // {
-    //     float minDistance = float.PositiveInfinity;
+    public List<Vector3> GetClosestPointsOnRay(Vector3 position)
+    {
+        float minDistance = float.PositiveInfinity;
+        Vector3 closestPoint = Vector3.zero;
 
-    //     Vector3 lastPos = origin;
-    //     foreach (Vector3 pos in pointsHit)
-    //     {
-    //         Vector3 lineStart = lastPos;
-    //         Vector3 lineEnd = pos;
-    //         Vector3 lineDir = (pos - lastPos).normalized;
+        List<Vector3> closestPoints = new List<Vector3>();
 
-    //         Vector3 v = position - lineStart;
-    //         float d = Vector3.Dot(v, lineDir);
-    //         Vector3 closestPoint = position + d * l
+        Vector3 lastPos = emitFromPoint.position;
+        foreach (Vector3 pos in pointsHit)
+        {
+            Vector3 lineStart = lastPos;
+            Vector3 lineEnd = pos;
+            Vector3 lineDir = (pos - lastPos).normalized;
 
-    //         float distance =
-    //     }
-    // }
+            Vector3 v = position - lineStart;
+
+
+            Vector3 projected = Vector3.Project(v, lineDir);
+            Vector3 thisClosestPoint = lineStart + projected;
+
+            // TODO: Clamp closest between start and end
+
+            float distance = Vector3.Distance(closestPoint, position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestPoint = thisClosestPoint;
+            }
+            lastPos = lineEnd;
+            closestPoints.Add(thisClosestPoint);
+        }
+        return closestPoints;
+    }
 
     void OnDrawGizmos()
     {

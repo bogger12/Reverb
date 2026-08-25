@@ -26,7 +26,7 @@ public class SoundProjectile : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out SoundSurface soundSurface))
         {
-            soundSurface.SoundCollide(soundSurface.material, this.gameObject);
+            soundSurface.SoundCollide(this.gameObject);
         }
         direction = Vector3.Reflect(direction, collision.contacts[0].normal);
         rigidbody.linearVelocity = speed * direction;

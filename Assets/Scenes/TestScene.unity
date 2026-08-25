@@ -1421,6 +1421,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 398973157}
   m_LocalEulerAnglesHint: {x: 0, y: -89.298, z: 0}
+--- !u!1 &1659167087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5620524313377324720, guid: 200e4638407d64fcabd980af631f9abd, type: 3}
+  m_PrefabInstance: {fileID: 6155544389695916936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1659167099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659167087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a9f2a771cbf32a98d734b76f2eafb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RaySoundListener
+  soundRays: []
 --- !u!1 &1711695773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1898,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5620524313377324720, guid: 200e4638407d64fcabd980af631f9abd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1659167099}
   m_SourcePrefab: {fileID: 100100000, guid: 200e4638407d64fcabd980af631f9abd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
