@@ -19,6 +19,10 @@ public class Holder : MonoBehaviour
     public float restitutionStrength = 0.8f;
     public float dampeningCoefficient = 0.95f;
 
+    [Header("Rotation")]
+
+    public float rotateSensitivity = 1f;
+    public float rotationFollow = 0.2f;
 
     private Rigidbody heldObject;
     private Vector3 hitPoint;
@@ -87,16 +91,17 @@ public class Holder : MonoBehaviour
 
             if (Input["Crouch"].IsPressed())
             {
-                float sensitivity = 1f;
+                Vector2 lookChange = Input["Look"].ReadValue<Vector2>() * rotateSensitivity;
 
-                Vector2 lookChange = Input["Look"].ReadValue<Vector2>() * sensitivity;
-
-                Quaternion xQuaternion = Quaternion.AngleAxis(lookChange.x, Vector3.up);
-                Quaternion yQuaternion = Quaternion.AngleAxis(lookChange.y, Vector3.right);
+                Quaternion xQuaternion = Quaternion.AngleAxis(lookChange.x, dragToPoint.up);
+                Quaternion yQuaternion = Quaternion.AngleAxis(lookChange.y, dragToPoint.right);
                 targetBodyRotation = xQuaternion * yQuaternion * targetBodyRotation;
+
             }
-            // Rotate towards target rotations
-            heldObject.MoveRotation(Quaternion.Slerp(heldObject.rotation, targetBodyRotation, 0.1f).normalized);
+            float restitutionPower = Quaternion.Angle(heldObject.rotation, targetBodyRotation) / 180f;
+            float increase = Mathf.Lerp(rotationFollow, 1, restitutionPower * restitutionPower);
+            // Rotate towards target rotation
+            heldObject.MoveRotation(Quaternion.Slerp(heldObject.rotation, targetBodyRotation, increase));
         }
     }
 
