@@ -24,11 +24,11 @@ public class Holder : MonoBehaviour
     public float rotateSensitivity = 1f;
     public float rotationFollow = 0.2f;
 
-    private Rigidbody heldObject;
+    private Rigidbody heldBody;
     private Vector3 hitPoint;
     private Quaternion targetBodyRotation = Quaternion.identity;
 
-    private bool heldObjectGravity;
+    private bool heldBodyGravity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,17 +47,17 @@ public class Holder : MonoBehaviour
             if (Input["Hold"].IsPressed())
             {
 
-                if (heldObject == null)
+                if (heldBody == null)
                 {
                     AkUnitySoundEngine.PostEvent("Grab_Obj", gameObject);
                     AkUnitySoundEngine.PostEvent("Hold_Obj", gameObject);
                     GameObject objectHit = hit.collider.gameObject;
                     if (objectHit.TryGetComponent(out Rigidbody rb))
                     {
-                        heldObject = rb;
-                        heldObjectGravity = heldObject.useGravity;
-                        heldObject.useGravity = false;
-                        targetBodyRotation = heldObject.rotation;
+                        heldBody = rb;
+                        heldBodyGravity = heldBody.useGravity;
+                        heldBody.useGravity = false;
+                        targetBodyRotation = heldBody.rotation;
                     }
                 }
 
@@ -66,8 +66,16 @@ public class Holder : MonoBehaviour
             {
                 //AkUnitySoundEngine.StopAll(gameObject);
                 AkUnitySoundEngine.ExecuteActionOnEvent("Hold_Obj", AkActionOnEventType.AkActionOnEventType_Stop, gameObject, 600, AkCurveInterpolation.AkCurveInterpolation_Linear);
-                if (heldObject) heldObject.useGravity = heldObjectGravity;
-                heldObject = null;
+                if (heldBody)
+                {
+                    heldBody.useGravity = heldBodyGravity;
+
+                    // (Quaternion.Inverse(heldBody.rotation) * targetBodyRotation * dragToPoint.rotation).ToAngleAxis(out float angleInDegrees, out Vector3 rotationAxis);
+                    // Vector3 angularDisplacement = rotationAxis * angleInDegrees * Mathf.Deg2Rad;
+                    // heldBody.angularVelocity = angularDisplacement / (Time.deltaTime * 10);
+                    // Debug.Log(heldBody.angularVelocity);
+                }
+                heldBody = null;
             }
 
         }
@@ -75,19 +83,19 @@ public class Holder : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (heldObject)
+        if (heldBody)
         {
 
-            Vector3 direction = dragToPoint.position - heldObject.position;
+            Vector3 direction = dragToPoint.position - heldBody.position;
             float distance = direction.magnitude;
             AkUnitySoundEngine.SetRTPCValue("Object_Held_Velocity", distance);
 
             Vector3 pullForce = distance * pullStrength * direction.normalized;
-            heldObject.AddForce(pullForce, ForceMode.Acceleration);
+            heldBody.AddForce(pullForce, ForceMode.Acceleration);
 
             // Restitution (dampen closer to target)
             float restitution = Mathf.InverseLerp(0, restitutionRadius, distance) * restitutionStrength + (1 - restitutionStrength);
-            heldObject.linearVelocity *= restitution * dampeningCoefficient;
+            heldBody.linearVelocity *= restitution * dampeningCoefficient;
 
             if (Input["Crouch"].IsPressed())
             {
@@ -98,10 +106,10 @@ public class Holder : MonoBehaviour
                 targetBodyRotation = xQuaternion * yQuaternion * targetBodyRotation;
 
             }
-            float restitutionPower = Quaternion.Angle(heldObject.rotation, targetBodyRotation) / 180f;
+            float restitutionPower = Quaternion.Angle(heldBody.rotation, targetBodyRotation) / 180f;
             float increase = Mathf.Lerp(rotationFollow, 1, restitutionPower * restitutionPower);
             // Rotate towards target rotation
-            heldObject.MoveRotation(Quaternion.Slerp(heldObject.rotation, targetBodyRotation, increase));
+            heldBody.MoveRotation(Quaternion.Slerp(heldBody.rotation, targetBodyRotation, increase));
         }
     }
 
@@ -117,6 +125,15 @@ public class Holder : MonoBehaviour
             Gizmos.color = Color.green;
         }
         Gizmos.DrawWireCube(dragToPoint.position, Vector3.one * 0.2f);
+
+        if (heldBody)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(heldBody.position, targetBodyRotation * Vector3.up);
+            Gizmos.color = Color.green;
+
+            Gizmos.DrawRay(heldBody.position, heldBody.rotation * Vector3.up);
+        }
 
     }
 
