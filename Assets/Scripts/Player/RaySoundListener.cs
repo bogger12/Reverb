@@ -30,7 +30,7 @@ public class RaySoundListener : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (closestPoints.Count == 0) return;
+        if (closestPoints == null || closestPoints.Count == 0) return;
         foreach (List<Vector3> points in closestPoints)
         {
             foreach (Vector3 point in points)

@@ -2,6 +2,7 @@ using System.IO;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Linq;
 
 [RequireComponent(typeof(LineRenderer))]
 public class SoundRay : Activateable
@@ -47,7 +48,7 @@ public class SoundRay : Activateable
         Vector3 direction = transform.forward;
         Vector3 lastPoint = emitFromPoint.position;
 
-        pointsHit = new List<Vector3> { lastPoint };
+        pointsHit = new List<Vector3>();
         totalDistance = 0;
         List<SoundSurface> lastSurfacesHit = surfacesHit;
         surfacesHit = new List<SoundSurface>();
@@ -84,8 +85,9 @@ public class SoundRay : Activateable
             }
         }
 
-        lineRenderer.positionCount = pointsHit.Count;
-        lineRenderer.SetPositions(pointsHit.ToArray());
+        Vector3[] linePoints = new List<Vector3> { emitFromPoint.position }.Concat(pointsHit).ToArray();
+        lineRenderer.positionCount = pointsHit.Count + 1;
+        lineRenderer.SetPositions(linePoints);
 
         // TOSOUND: Update audio here
 
