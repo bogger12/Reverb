@@ -36,7 +36,7 @@ public class RaySoundListener : MonoBehaviour
             foreach (Vector3 point in points)
             {
                 Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere(point, 0.5f);
+                Gizmos.DrawWireSphere(point, 0.2f);
             }
         }
     }

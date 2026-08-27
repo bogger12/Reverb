@@ -128,9 +128,10 @@ public class SoundRay : Activateable
             Vector3 projected = Vector3.Project(v, lineDir);
             Vector3 thisClosestPoint = lineStart + projected;
 
-            // TODO: Clamp closest between start and end
+            if (Vector3.Dot(lineEnd - lineStart, position - lineStart) < 0) thisClosestPoint = lineStart;
+            if (Vector3.Dot(lineStart - lineEnd, position - lineEnd) < 0) thisClosestPoint = lineEnd;
 
-            float distance = Vector3.Distance(closestPoint, position);
+            float distance = Vector3.Distance(thisClosestPoint, position);
             if (distance < minDistance)
             {
                 minDistance = distance;
