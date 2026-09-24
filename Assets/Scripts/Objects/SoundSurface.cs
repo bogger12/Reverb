@@ -30,6 +30,11 @@ public class SoundSurface : MonoBehaviour
         AkUnitySoundEngine.PostEvent(string.Format("Bounce_{0}", material), fromObject); // Bounce_Metal
     }
 
+    public virtual void SoundRayHit(Vector3 hitPoint, GameObject fromObject)
+    {
+
+    }
+
 
     public void BeginRaySound(GameObject fromObject)
     {

@@ -30,8 +30,8 @@ public class SoundRay : Activateable
 
     public LayerMask includeLayers;
 
-    private List<Vector3> pointsHit = new List<Vector3>();
-    private List<SoundSurface> surfacesHit = new List<SoundSurface>();
+    private List<Ray.SoundRayHit> lastSoundRayHits;
+    // private List<SoundSurface> surfacesHit = new List<SoundSurface>();
     private float totalDistance = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,49 +45,25 @@ public class SoundRay : Activateable
     void Update()
     {
 
-        Vector3 direction = transform.forward;
-        Vector3 lastPoint = emitFromPoint.position;
-
-        pointsHit = new List<Vector3>();
-        totalDistance = 0;
-        List<SoundSurface> lastSurfacesHit = surfacesHit;
-        surfacesHit = new List<SoundSurface>();
-
-        for (int i = 0; i < strength; i++)
+        if (lineRenderer.enabled)
         {
-            if (Physics.Raycast(lastPoint, direction, out RaycastHit hit, maxDistance, includeLayers))
-            {
-                pointsHit.Add(hit.point);
-                direction = Vector3.Reflect(direction, hit.normal);
-
-                lastPoint = hit.point + direction * 0.001f;
-                totalDistance += hit.distance;
-                if (hit.transform.TryGetComponent(out SoundSurface surface))
-                {
-                    surfacesHit.Add(surface);
-                    if (!lastSurfacesHit.Contains(surface))
-                    {
-                        surface.BeginRaySound(surface.gameObject);
-                    }
-                }
-            }
-            else
-            {
-                pointsHit.Add(lastPoint + direction * maxDistance);
-                break;
-            }
-        }
-        foreach (SoundSurface surface in lastSurfacesHit) // No dictionary here cus I don't care B)
-        {
-            if (!surfacesHit.Contains(surface))
-            {
-                surface.EndRaySound(surface.gameObject);
-            }
+            RenderRay();
         }
 
-        Vector3[] linePoints = new List<Vector3> { emitFromPoint.position }.Concat(pointsHit).ToArray();
-        lineRenderer.positionCount = pointsHit.Count + 1;
-        lineRenderer.SetPositions(linePoints);
+        // List<SoundRayHit> lastSurfacesHit = surfacesHit;
+
+        // foreach (SoundSurface surface in lastSurfacesHit) // No dictionary here cus I don't care B)
+        // {
+        // if (!lastSurfacesHit.Contains(surface))
+        // {
+        //     surface.BeginRaySound(surface.gameObject);
+        // }
+        //     if (!surfacesHit.Contains(surface))
+        //     {
+        //         surface.EndRaySound(surface.gameObject);
+        //     }
+        // }
+
 
         // TOSOUND: Update audio here
 
@@ -95,6 +71,12 @@ public class SoundRay : Activateable
         // surfacesHit = surfaces hit - each has material
         // tone = laser colour/sound tone -> use nameof(tone)
         string toneName = nameof(tone); // can use this for event calling based on color/tone of ray
+
+    }
+
+    public void RenderRay()
+    {
+        lastSoundRayHits = Ray.RenderLineBounces(lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
 
     }
 
@@ -108,43 +90,14 @@ public class SoundRay : Activateable
         lineRenderer.enabled = false;
     }
 
-    public List<Vector3> GetClosestPointsOnRay(Vector3 position)
+    public List<Vector3> GetClosestPointsOnRay(Vector3 fromPosition)
     {
-        float minDistance = float.PositiveInfinity;
-        Vector3 closestPoint = Vector3.zero;
-
-        List<Vector3> closestPoints = new List<Vector3>();
-
-        Vector3 lastPos = emitFromPoint.position;
-        foreach (Vector3 pos in pointsHit)
-        {
-            Vector3 lineStart = lastPos;
-            Vector3 lineEnd = pos;
-            Vector3 lineDir = (pos - lastPos).normalized;
-
-            Vector3 v = position - lineStart;
-
-
-            Vector3 projected = Vector3.Project(v, lineDir);
-            Vector3 thisClosestPoint = lineStart + projected;
-
-            if (Vector3.Dot(lineEnd - lineStart, position - lineStart) < 0) thisClosestPoint = lineStart;
-            if (Vector3.Dot(lineStart - lineEnd, position - lineEnd) < 0) thisClosestPoint = lineEnd;
-
-            float distance = Vector3.Distance(thisClosestPoint, position);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                closestPoint = thisClosestPoint;
-            }
-            lastPos = lineEnd;
-            closestPoints.Add(thisClosestPoint);
-        }
-        return closestPoints;
+        return Ray.GetClosestPointsOnRay(emitFromPoint.position, fromPosition, lastSoundRayHits.Select(s => s.hitPoint).ToList());
     }
 
     void OnDrawGizmos()
     {
+        if (lineRenderer == null && !startsActive) return;
         Gizmos.DrawRay(emitFromPoint.position, transform.forward * 1f);
         if (!lineRenderer || !lineRenderer.enabled) return;
         Vector3[] positions = new Vector3[lineRenderer.positionCount];
