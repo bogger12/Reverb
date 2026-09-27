@@ -31,7 +31,7 @@ public class SoundSurface : MonoBehaviour
 
     void Update()
     {
-        currentHits.Clear();
+        currentHits = new List<Ray.SoundRayHit>();
     }
 
     public void SoundCollide(GameObject fromObject)

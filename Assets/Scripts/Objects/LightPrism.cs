@@ -6,17 +6,20 @@ using UnityEngine;
 public class LightPrism : SoundSurface
 {
 
-    public int linesToSplit = 2;
+    public const int linesToSplit = 2;
     public float splitAngleDegrees = 20;
 
     public GameObject lineChild;
 
     private SoundRay[] soundRayChildren;
 
-    bool hitLastFrame = false;
-
     Quaternion rayRotation;
     Vector3 rayFromPosition;
+
+    Dictionary<int, SoundRay[]> fromObjectToLineChildren = new Dictionary<int, SoundRay[]>();
+
+    List<int> fromObjectStayingThisFrame = new List<int>();
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,55 +29,27 @@ public class LightPrism : SoundSurface
             Debug.LogError("LightPrism needs a child with LineRenderer and SoundRay assigned");
         }
 
-        // create line renderer children, assign to array
-        for (int i = 1; i < linesToSplit; i++)
-        {
-            Instantiate(lineChild, gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
-        }
-        soundRayChildren = new List<SoundRay> { lineChild.GetComponent<SoundRay>() }.Concat(gameObject.GetComponentsInChildren<SoundRay>()).ToArray();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!hitLastFrame)
+        foreach (int objectId in fromObjectToLineChildren.Keys.ToList())
         {
-            DisableSoundRays();
+            if (!fromObjectStayingThisFrame.Contains(objectId))
+            {
+                foreach (SoundRay sr in fromObjectToLineChildren[objectId])
+                {
+                    Destroy(sr.gameObject);
+                }
+                fromObjectToLineChildren.Remove(objectId);
+            }
         }
-        float startAngle = -splitAngleDegrees * (Mathf.Floor(linesToSplit / 2) + (linesToSplit % 2 == 0 ? 0.5f : 0f));
-
-        for (int i = 0; i < soundRayChildren.Length; i++)
-        {
-            soundRayChildren[i].transform.rotation = rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up);
-            soundRayChildren[i].transform.position = rayFromPosition;
-        }
-
-        hitLastFrame = false;
+        fromObjectStayingThisFrame = new List<int>();
     }
-
-
-    void EnableSoundRays()
-    {
-        foreach (SoundRay soundRay in soundRayChildren)
-        {
-            soundRay.Activate();
-        }
-    }
-
-    void DisableSoundRays()
-    {
-        foreach (SoundRay soundRay in soundRayChildren)
-        {
-            soundRay.Deactivate();
-        }
-    }
-
 
     public override void SoundRayHit(Ray.SoundRayHit soundRayHit, GameObject fromObject)
     {
-        hitLastFrame = true;
-        EnableSoundRays();
         // raycast backwards to get surface
 
         Vector3 rayCastFrom = transform.position - (soundRayHit.hitPoint - transform.position) * 2;
@@ -90,7 +65,40 @@ public class LightPrism : SoundSurface
                 rayRotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
             }
         }
-        ;
+
+        // Create or sustain children
+
+        float startAngle = -splitAngleDegrees * (Mathf.Floor(linesToSplit / 2) + (linesToSplit % 2 == 0 ? 0.5f : 0f) - 1f);
+
+        Debug.DrawRay(rayFromPosition, rayRotation * Vector3.forward);
+
+        int fromObjectInstanceId = fromObject.GetInstanceID();
+        if (fromObjectToLineChildren.ContainsKey(fromObjectInstanceId))
+        {
+            fromObjectStayingThisFrame.Add(fromObjectInstanceId);
+
+            for (int i = 0; i < linesToSplit; i++)
+            {
+                fromObjectToLineChildren[fromObjectInstanceId][i].transform.SetPositionAndRotation(rayFromPosition, rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up));
+            }
+        }
+        else
+        {
+            SoundRay[] soundRaysToAdd = new SoundRay[linesToSplit];
+            // create line renderer children, assign to array
+            for (int i = 0; i < linesToSplit; i++)
+            {
+                GameObject newLineObject = Instantiate(lineChild, gameObject.transform.position, gameObject.transform.rotation, gameObject.transform);
+                SoundRay soundRay = newLineObject.GetComponent<SoundRay>();
+                soundRaysToAdd[i] = soundRay;
+                soundRay.tone = soundRayHit.tone;
+
+                soundRay.transform.SetPositionAndRotation(rayFromPosition, rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up));
+            }
+            fromObjectToLineChildren.Add(fromObjectInstanceId, soundRaysToAdd);
+            fromObjectStayingThisFrame.Add(fromObjectInstanceId);
+        }
+
     }
 
 }

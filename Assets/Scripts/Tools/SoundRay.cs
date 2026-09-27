@@ -40,6 +40,8 @@ public class SoundRay : Activateable
             RenderRay();
         }
 
+        lineRenderer.material.color = Ray.toneToColor[tone];
+
         // List<SoundRayHit> lastSurfacesHit = surfacesHit;
 
         // foreach (SoundSurface surface in lastSurfacesHit) // No dictionary here cus I don't care B)

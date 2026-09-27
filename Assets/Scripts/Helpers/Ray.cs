@@ -18,6 +18,17 @@ public static class Ray
         Ti
     }
 
+    public static readonly Dictionary<Tone, Color> toneToColor = new Dictionary<Tone, Color>
+    {
+        { Tone.Do, Color.red },
+        { Tone.Re, Color.orange },
+        { Tone.Mi, Color.yellow },
+        { Tone.Fa, Color.green },
+        { Tone.Sol, Color.blue },
+        { Tone.La, Color.indigo },
+        { Tone.Ti, Color.violet },
+    };
+
     public class SoundRayHit
     {
         public Tone tone;

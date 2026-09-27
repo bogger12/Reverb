@@ -15,5 +15,7 @@ public class MicrophoneRayHitCondition : PuzzleCondition
     void Update()
     {
         if (GetComponentsInChildren<Microphone>().All(mic => mic.IsSatisfied())) OnCompleted();
+
+        // Maybe play some nice completed sound
     }
 }
