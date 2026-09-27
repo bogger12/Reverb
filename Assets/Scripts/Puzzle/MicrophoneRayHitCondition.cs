@@ -14,7 +14,14 @@ public class MicrophoneRayHitCondition : PuzzleCondition
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentsInChildren<Microphone>().All(mic => mic.IsSatisfied())) OnCompleted();
+        if (GetComponentsInChildren<Microphone>().All(mic => mic.IsSatisfied()))
+        {
+            OnCompleted();
+        }
+        else
+        {
+            OnUncompleted();
+        }
 
         // Maybe play some nice completed sound
     }

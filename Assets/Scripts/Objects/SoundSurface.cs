@@ -8,9 +8,9 @@ public class SoundSurface : MonoBehaviour
     public enum Material
     {
         Metal,
-        Wood,
         Concrete,
-        Water
+        Brick,
+        Rock
     }
 
     public Material material;

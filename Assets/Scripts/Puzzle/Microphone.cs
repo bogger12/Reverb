@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Numerics;
+
 
 [RequireComponent(typeof(MeshRenderer))]
 public class Microphone : SoundSurface
@@ -16,20 +18,15 @@ public class Microphone : SoundSurface
         int ratioCount = 0;
         for (int i = 0; i < Enum.GetNames(typeof(Ray.Tone)).Length; i++)
         {
-            int currentTone = (1 << i) >> 1;
-            Debug.Log(string.Format("current tone: {0}", currentTone));
+            int currentToneFlag = (1 << i);
+            Debug.Log(string.Format("current tone: {0}", currentToneFlag));
 
-            if ((tonesNeeded & currentTone) != 0)
+            if ((tonesNeeded & currentToneFlag) != 0) // If currentTone is any of the tones needed
             {
-                currentTone >>= 1; // Shift to correct for enum
+                Ray.Tone currentTone = (Ray.Tone)Mathf.FloorToInt(Mathf.Log(currentToneFlag, 2));
                 Color newColor = Ray.toneToColor[(Ray.Tone)currentTone];
-                Debug.Log(string.Format("tone: {0} color got: {1}", (Ray.Tone)currentTone, newColor));
 
                 float ratio = 1f / (ratioCount++ + 1);
-                Debug.Log(string.Format("{0} x {1}", ratio, newColor));
-                Debug.Log(Mathf.Lerp(finalColor.r, newColor.r, ratio));
-                Debug.Log(Mathf.Lerp(finalColor.g, newColor.g, ratio));
-                Debug.Log(Mathf.Lerp(finalColor.b, newColor.b, ratio));
                 finalColor.r = Mathf.Lerp(finalColor.r, newColor.r, ratio);
                 finalColor.g = Mathf.Lerp(finalColor.g, newColor.g, ratio);
                 finalColor.b = Mathf.Lerp(finalColor.b, newColor.b, ratio);

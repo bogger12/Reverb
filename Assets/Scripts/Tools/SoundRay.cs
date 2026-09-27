@@ -57,7 +57,7 @@ public class SoundRay : Activateable
         soundRayHits = Ray.RenderLineBounces(tone, lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
     }
 
-    public override void Activate()
+    public override void Activate(bool permanent)
     {
         lineRenderer.enabled = true;
         // begin sound

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5721013181544411687}
   - component: {fileID: 5174969634946279226}
   - component: {fileID: 1845371579747128242}
+  - component: {fileID: 1904967022099624707}
   m_Layer: 8
   m_Name: InteractableCube
   m_TagString: Untagged
@@ -69,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2d7577a4f03c9defea040709165a79e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,3 +158,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.3
+--- !u!114 &1904967022099624707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837476817859527102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ed04d1589c8487ebe460b466f0f3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundSurface
+  material: 0
+  reflectRay: 1

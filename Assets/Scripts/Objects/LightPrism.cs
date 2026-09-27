@@ -79,7 +79,7 @@ public class LightPrism : SoundSurface
 
             for (int i = 0; i < linesToSplit; i++)
             {
-                fromObjectToLineChildren[fromObjectInstanceId][i].transform.SetPositionAndRotation(rayFromPosition, rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up));
+                fromObjectToLineChildren[fromObjectInstanceId][i].transform.SetPositionAndRotation(rayFromPosition, rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, Vector3.up));
             }
         }
         else
@@ -93,7 +93,7 @@ public class LightPrism : SoundSurface
                 soundRaysToAdd[i] = soundRay;
                 soundRay.tone = soundRayHit.tone;
 
-                soundRay.transform.SetPositionAndRotation(rayFromPosition, rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up));
+                soundRay.transform.SetPositionAndRotation(rayFromPosition, rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, Vector3.up));
             }
             fromObjectToLineChildren.Add(fromObjectInstanceId, soundRaysToAdd);
             fromObjectStayingThisFrame.Add(fromObjectInstanceId);

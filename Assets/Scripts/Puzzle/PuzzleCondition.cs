@@ -11,9 +11,15 @@ public abstract class PuzzleCondition : MonoBehaviour
     {
         if (!triggersOnce || !hasTriggered)
         {
-            activateable.Activate();
+            activateable.Activate(triggersOnce);
         }
         hasTriggered = true;
+    }
+
+    public void OnUncompleted()
+    {
+        if (triggersOnce) return;
+        activateable.Deactivate();
     }
 
     void OnDrawGizmos()
