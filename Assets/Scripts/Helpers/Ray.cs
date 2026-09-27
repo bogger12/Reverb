@@ -1,25 +1,40 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 
 
 public static class Ray
 {
+
+    public enum Tone
+    {
+        Do,
+        Re,
+        Mi,
+        Fa,
+        Sol,
+        La,
+        Ti
+    }
+
     public class SoundRayHit
     {
+        public Tone tone;
         public Vector3 hitPoint;
         public float distance;
         public SoundSurface soundSurface;
 
-        public SoundRayHit(Vector3 hitPoint, float distance, SoundSurface soundSurface)
+        public SoundRayHit(Tone tone, Vector3 hitPoint, float distance, SoundSurface soundSurface)
         {
+            this.tone = tone;
             this.hitPoint = hitPoint;
             this.distance = distance;
             this.soundSurface = soundSurface;
         }
     }
 
-    public static List<SoundRayHit> RenderLineBounces(LineRenderer lineRenderer, Vector3 firstPoint, Vector3 initialDirection, int numBounces, float maxDistance, LayerMask includeLayers)
+    public static List<SoundRayHit> RenderLineBounces(Tone tone, LineRenderer lineRenderer, Vector3 firstPoint, Vector3 initialDirection, int numBounces, float maxDistance, LayerMask includeLayers)
     {
         Vector3 direction = initialDirection;
         Vector3 lastPoint = firstPoint;
@@ -34,17 +49,18 @@ public static class Ray
                 lastPoint = hit.point + direction * 0.001f;
 
                 hit.transform.TryGetComponent(out SoundSurface surface);
-                soundRayHits.Add(new SoundRayHit(hit.point, hit.distance, surface));
+                SoundRayHit thisHit = new SoundRayHit(tone, hit.point, hit.distance, surface);
+                soundRayHits.Add(thisHit);
                 if (surface != null)
                 {
-                    surface.SoundRayHit(hit.point, lineRenderer.gameObject);
+                    surface.SoundRayHit(thisHit, lineRenderer.gameObject);
                     if (!surface.reflectRay) break;
                 }
 
             }
             else
             {
-                soundRayHits.Add(new SoundRayHit(lastPoint + direction * maxDistance, hit.distance, null));
+                soundRayHits.Add(new SoundRayHit(tone, lastPoint + direction * maxDistance, hit.distance, null));
                 break;
             }
         }

@@ -15,6 +15,9 @@ public class LightPrism : SoundSurface
 
     bool hitLastFrame = false;
 
+    Quaternion rayRotation;
+    Vector3 rayFromPosition;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +46,8 @@ public class LightPrism : SoundSurface
 
         for (int i = 0; i < soundRayChildren.Length; i++)
         {
-            soundRayChildren[i].transform.rotation = gameObject.transform.rotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up);
+            soundRayChildren[i].transform.rotation = rayRotation * Quaternion.AngleAxis(startAngle + splitAngleDegrees * i, transform.up);
+            soundRayChildren[i].transform.position = rayFromPosition;
         }
 
         hitLastFrame = false;
@@ -67,11 +71,26 @@ public class LightPrism : SoundSurface
     }
 
 
-    public override void SoundRayHit(Vector3 hitPoint, GameObject fromObject)
+    public override void SoundRayHit(Ray.SoundRayHit soundRayHit, GameObject fromObject)
     {
         hitLastFrame = true;
         EnableSoundRays();
-        // NEED TO BASE INITIAL ANGLE ON ANGLE OF INCIDENCE
+        // raycast backwards to get surface
+
+        Vector3 rayCastFrom = transform.position - (soundRayHit.hitPoint - transform.position) * 2;
+
+        RaycastHit[] hits = Physics.RaycastAll(rayCastFrom, (transform.position - rayCastFrom).normalized, (transform.position - rayCastFrom).magnitude);
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.transform == transform)
+            {
+                // is this object
+                rayFromPosition = hit.point;
+                rayRotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
+            }
+        }
+        ;
     }
 
 }

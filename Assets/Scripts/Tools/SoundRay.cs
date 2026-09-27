@@ -7,20 +7,10 @@ using System.Linq;
 [RequireComponent(typeof(LineRenderer))]
 public class SoundRay : Activateable
 {
-    public enum Tone
-    {
-        Do,
-        Re,
-        Mi,
-        Fa,
-        Sol,
-        La,
-        Ti
-    }
 
     private LineRenderer lineRenderer;
     public int strength = 3; // Max bounces
-    public Tone tone = Tone.Do;
+    public Ray.Tone tone = Ray.Tone.Do;
 
     public float maxDistance = 200f;
 
@@ -76,7 +66,7 @@ public class SoundRay : Activateable
 
     public void RenderRay()
     {
-        lastSoundRayHits = Ray.RenderLineBounces(lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
+        lastSoundRayHits = Ray.RenderLineBounces(tone, lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
     }
 
     public override void Activate()
