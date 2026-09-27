@@ -20,8 +20,8 @@ public class SoundRay : Activateable
 
     public LayerMask includeLayers;
 
+    private List<Ray.SoundRayHit> soundRayHits = new List<Ray.SoundRayHit>();
     private List<Ray.SoundRayHit> lastSoundRayHits = new List<Ray.SoundRayHit>();
-    // private List<SoundSurface> surfacesHit = new List<SoundSurface>();
     private float totalDistance = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,21 +42,6 @@ public class SoundRay : Activateable
 
         lineRenderer.material.color = Ray.toneToColor[tone];
 
-        // List<SoundRayHit> lastSurfacesHit = surfacesHit;
-
-        // foreach (SoundSurface surface in lastSurfacesHit) // No dictionary here cus I don't care B)
-        // {
-        // if (!lastSurfacesHit.Contains(surface))
-        // {
-        //     surface.BeginRaySound(surface.gameObject);
-        // }
-        //     if (!surfacesHit.Contains(surface))
-        //     {
-        //         surface.EndRaySound(surface.gameObject);
-        //     }
-        // }
-
-
         // TOSOUND: Update audio here
 
         // totalDistance = total length of ray
@@ -68,22 +53,25 @@ public class SoundRay : Activateable
 
     public void RenderRay()
     {
-        lastSoundRayHits = Ray.RenderLineBounces(tone, lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
+        lastSoundRayHits = soundRayHits;
+        soundRayHits = Ray.RenderLineBounces(tone, lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
     }
 
     public override void Activate()
     {
         lineRenderer.enabled = true;
+        // begin sound
     }
 
     public override void Deactivate()
     {
         lineRenderer.enabled = false;
+        // end sound
     }
 
     public List<Vector3> GetClosestPointsOnRay(Vector3 fromPosition)
     {
-        return Ray.GetClosestPointsOnRay(emitFromPoint.position, fromPosition, lastSoundRayHits.Select(s => s.hitPoint).ToList());
+        return Ray.GetClosestPointsOnRay(emitFromPoint.position, fromPosition, soundRayHits.Select(s => s.hitPoint).ToList());
     }
 
     void OnDrawGizmos()

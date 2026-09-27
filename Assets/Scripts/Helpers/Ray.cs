@@ -18,7 +18,7 @@ public static class Ray
         Ti
     }
 
-    public static readonly Dictionary<Tone, Color> toneToColor = new Dictionary<Tone, Color>
+    public static readonly Dictionary<Tone, Color> toneToColor = new()
     {
         { Tone.Do, Color.red },
         { Tone.Re, Color.orange },

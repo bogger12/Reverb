@@ -19,7 +19,7 @@ public abstract class PuzzleCondition : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, 0.2f);
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, activateable.transform.position - transform.position);
     }
 }

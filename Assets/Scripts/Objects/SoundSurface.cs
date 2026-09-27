@@ -18,8 +18,6 @@ public class SoundSurface : MonoBehaviour
     public bool reflectRay = true;
 
     public event Action<Material, GameObject> OnSoundCollision;
-    public event Action<Material, GameObject> OnSoundReflectEnter;
-    public event Action<Material, GameObject> OnSoundReflectExit;
 
 
     public List<Ray.SoundRayHit> currentHits = new List<Ray.SoundRayHit>();
@@ -44,19 +42,5 @@ public class SoundSurface : MonoBehaviour
     {
         currentHits.Add(soundRayHit);
     }
-
-
-    public void BeginRaySound(GameObject fromObject)
-    {
-        OnSoundReflectEnter?.Invoke(material, fromObject);
-        // TOSOUND: Begin ray sound hitting wall
-    }
-
-    public void EndRaySound(GameObject fromObject)
-    {
-        OnSoundReflectExit?.Invoke(material, fromObject);
-        // TOSOUND: End ray sound hitting wall
-    }
-
 
 }

@@ -18,4 +18,18 @@ public class MicrophoneRayHitCondition : PuzzleCondition
 
         // Maybe play some nice completed sound
     }
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 0.2f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position, activateable.transform.position - transform.position);
+
+        foreach (Microphone mic in GetComponentsInChildren<Microphone>())
+        {
+            Gizmos.color = mic.IsSatisfied() ? Color.green : Color.red;
+            Gizmos.DrawLine(transform.position, mic.transform.position);
+        }
+    }
 }
