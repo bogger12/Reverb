@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{71D7867D-5F79-C3AA-382F-E208F5D3D480}",
+    "Hash": "{40F5AAA7-F235-4D7A-8206-01D87FF9017A}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -83,6 +83,6 @@
     ]
    }
   ],
-  "FileHash": "{B178AB76-06D2-14C0-D127-6EFD9571AB38}"
+  "FileHash": "{8B7B5CEB-6023-AC88-720F-B98B205868C5}"
  }
 }

@@ -1,12 +1,16 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 [RequireComponent(typeof(Rigidbody))]
+
 public class SoundProjectile : MonoBehaviour
 {
     private new Rigidbody rigidbody;
 
     public float speed;
     public Vector3 direction;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,11 +28,14 @@ public class SoundProjectile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
+
         if (collision.gameObject.TryGetComponent(out SoundSurface soundSurface))
         {
             soundSurface.SoundCollide(this.gameObject);
         }
         direction = Vector3.Reflect(direction, collision.contacts[0].normal);
         rigidbody.linearVelocity = speed * direction;
+
     }
+
 }

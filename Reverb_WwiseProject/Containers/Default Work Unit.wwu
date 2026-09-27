@@ -2192,7 +2192,13 @@
 				<Folder Name="Environment" ID="{A8D9F2A8-029E-4B1A-A887-FF145CF1BF9A}" ShortID="640494165">
 					<ChildrenList>
 						<Sound Name="Material 1" ID="{C468AE9E-0ED4-437A-9678-5C5A7138D0AE}" ShortID="13488701">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
 								</Reference>
@@ -2214,7 +2220,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Material 2" ID="{78C9865F-FF21-4904-8BEE-CA845BE8FAF0}" ShortID="589759866">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
 								</Reference>
@@ -2238,6 +2250,44 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Monkey_Hit" ID="{B0C3714B-8A66-41D8-ACB2-AACEB156D816}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Material 3" ID="{D576A110-5DC2-41AD-8475-2E7F83138027}" ShortID="370458472">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>28</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Physically_Based" ID="{7AF96D5E-B0A7-4524-B96B-04F53DEAEC94}" WorkUnitID="{E312AA2F-7D32-49AE-9B3F-853E8C0370AC}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4EDF78FE-91BA-4929-8BAE-BFF218F0006F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{54415EED-4C5C-464C-9ABC-580D343F04D0}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Rock_Hit" ID="{635F2263-485B-4CF2-ABB0-0073C71E6085}">
+									<Language>SFX</Language>
+									<AudioFile>Rock_Hit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="421151750"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Rock_Hit" ID="{635F2263-485B-4CF2-ABB0-0073C71E6085}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
