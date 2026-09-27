@@ -14,6 +14,8 @@ public class SoundSurface : MonoBehaviour
 
     public Material material;
 
+    public bool reflectRay = true;
+
     public event Action<Material, GameObject> OnSoundCollision;
     public event Action<Material, GameObject> OnSoundReflectEnter;
     public event Action<Material, GameObject> OnSoundReflectExit;

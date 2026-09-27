@@ -71,6 +71,7 @@ public class LightPrism : SoundSurface
     {
         hitLastFrame = true;
         EnableSoundRays();
+        // NEED TO BASE INITIAL ANGLE ON ANGLE OF INCIDENCE
     }
 
 }

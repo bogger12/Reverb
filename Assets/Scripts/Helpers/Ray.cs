@@ -34,8 +34,13 @@ public static class Ray
                 lastPoint = hit.point + direction * 0.001f;
 
                 hit.transform.TryGetComponent(out SoundSurface surface);
-                if (surface != null) surface.SoundRayHit(hit.point, lineRenderer.gameObject);
                 soundRayHits.Add(new SoundRayHit(hit.point, hit.distance, surface));
+                if (surface != null)
+                {
+                    surface.SoundRayHit(hit.point, lineRenderer.gameObject);
+                    if (!surface.reflectRay) break;
+                }
+
             }
             else
             {

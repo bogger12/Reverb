@@ -30,7 +30,7 @@ public class SoundRay : Activateable
 
     public LayerMask includeLayers;
 
-    private List<Ray.SoundRayHit> lastSoundRayHits;
+    private List<Ray.SoundRayHit> lastSoundRayHits = new List<Ray.SoundRayHit>();
     // private List<SoundSurface> surfacesHit = new List<SoundSurface>();
     private float totalDistance = 0;
 
@@ -77,7 +77,6 @@ public class SoundRay : Activateable
     public void RenderRay()
     {
         lastSoundRayHits = Ray.RenderLineBounces(lineRenderer, emitFromPoint.position, transform.forward, strength, maxDistance, includeLayers);
-
     }
 
     public override void Activate()

@@ -856,6 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightPrism
   material: 0
+  reflectRay: 0
   linesToSplit: 2
   splitAngleDegrees: 20
   lineChild: {fileID: 946272455}
@@ -1286,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSurface
   material: 0
+  reflectRay: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,7 +1508,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5ec3514b14fe049e5afc24df03b2fb73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1540,7 +1542,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.19999886
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2698,6 +2700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSurface
   material: 1
+  reflectRay: 1
 --- !u!4 &1596623455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7687062417227568011, guid: 7929fa40446010e9eac65e52bb09e3f2, type: 3}
@@ -2736,6 +2739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSurface
   material: 0
+  reflectRay: 1
 --- !u!65 &1602783016
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2958,6 +2962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundSurface
   material: 1
+  reflectRay: 1
 --- !u!65 &1711695775
 BoxCollider:
   m_ObjectHideFlags: 0
